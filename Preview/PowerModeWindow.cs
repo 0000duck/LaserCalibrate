@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace Preview
 {
-    public partial class Login : Form
+    public partial class PowerModeWindow : Form
     {
-        public Login()
+        public PowerModeWindow()
         {
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            var wm = new MainWindow();
-            wm.Closed += (object senderObject, EventArgs eventArgs) => this.Close();
-            wm.Show();
+            var mainWindow=new MainWindow();
+            mainWindow.Closed += (o, a) => this.Close();
+            mainWindow.Show();
             this.Hide();
-
         }
     }
 }
