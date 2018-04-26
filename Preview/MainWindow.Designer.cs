@@ -25,417 +25,621 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RealPlayWnd1 = new System.Windows.Forms.PictureBox();
-            this.RealPlayWnd2 = new System.Windows.Forms.PictureBox();
-            this.CamLabel = new System.Windows.Forms.Label();
-            this.CamLabel2 = new System.Windows.Forms.Label();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.摄像机ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.摄像机1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.摄像机2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.连接到ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.控制器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.连接ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.继电器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.选项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Cam = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.AxisGroupBox = new System.Windows.Forms.GroupBox();
-            this.rAxis = new System.Windows.Forms.RadioButton();
-            this.zAxis = new System.Windows.Forms.RadioButton();
-            this.yAxis = new System.Windows.Forms.RadioButton();
-            this.xAxis = new System.Windows.Forms.RadioButton();
-            this.StartMoveButton = new System.Windows.Forms.Button();
-            this.StopMoveButton = new System.Windows.Forms.Button();
-            this.PreviewButton = new System.Windows.Forms.Button();
-            this.Controller = new System.Windows.Forms.GroupBox();
-            this.AutoMove = new System.Windows.Forms.Button();
-            this.Camera = new System.Windows.Forms.GroupBox();
-            this.StopPreview = new System.Windows.Forms.Button();
-            this.ExitButton = new System.Windows.Forms.Button();
-            this.Relays = new System.Windows.Forms.GroupBox();
-            this.RelayBButton = new System.Windows.Forms.Button();
-            this.RelayAButton = new System.Windows.Forms.Button();
-            this.Angle = new System.Windows.Forms.TextBox();
-            this.angle_label = new System.Windows.Forms.Label();
-            this.ControlArgs = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd2)).BeginInit();
-            this.menuStrip.SuspendLayout();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.Cam.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
+            this.splitContainer8.Panel1.SuspendLayout();
+            this.splitContainer8.Panel2.SuspendLayout();
+            this.splitContainer8.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.AxisGroupBox.SuspendLayout();
-            this.Controller.SuspendLayout();
-            this.Camera.SuspendLayout();
-            this.Relays.SuspendLayout();
-            this.ControlArgs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
+            this.splitContainer9.Panel1.SuspendLayout();
+            this.splitContainer9.Panel2.SuspendLayout();
+            this.splitContainer9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
-            // RealPlayWnd1
+            // tableLayoutPanel1
             // 
-            this.RealPlayWnd1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.RealPlayWnd1.Location = new System.Drawing.Point(15, 18);
-            this.RealPlayWnd1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RealPlayWnd1.Name = "RealPlayWnd1";
-            this.RealPlayWnd1.Size = new System.Drawing.Size(449, 342);
-            this.RealPlayWnd1.TabIndex = 5;
-            this.RealPlayWnd1.TabStop = false;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Cam, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.splitContainer9, 2, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1317, 700);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // RealPlayWnd2
+            // groupBox4
             // 
-            this.RealPlayWnd2.BackColor = System.Drawing.SystemColors.WindowText;
-            this.RealPlayWnd2.Location = new System.Drawing.Point(16, 18);
-            this.RealPlayWnd2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RealPlayWnd2.Name = "RealPlayWnd2";
-            this.RealPlayWnd2.Size = new System.Drawing.Size(449, 342);
-            this.RealPlayWnd2.TabIndex = 6;
-            this.RealPlayWnd2.TabStop = false;
+            this.groupBox4.Controls.Add(this.pictureBox4);
+            this.groupBox4.Location = new System.Drawing.Point(511, 353);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(502, 344);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "三维能量分布";
             // 
-            // CamLabel
+            // pictureBox4
             // 
-            this.CamLabel.AutoSize = true;
-            this.CamLabel.Location = new System.Drawing.Point(-3, 0);
-            this.CamLabel.Name = "CamLabel";
-            this.CamLabel.Size = new System.Drawing.Size(60, 15);
-            this.CamLabel.TabIndex = 7;
-            this.CamLabel.Text = "监视器1";
+            this.pictureBox4.Location = new System.Drawing.Point(7, 25);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(494, 313);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
-            // CamLabel2
+            // groupBox2
             // 
-            this.CamLabel2.AutoSize = true;
-            this.CamLabel2.Location = new System.Drawing.Point(-3, 0);
-            this.CamLabel2.Name = "CamLabel2";
-            this.CamLabel2.Size = new System.Drawing.Size(60, 15);
-            this.CamLabel2.TabIndex = 8;
-            this.CamLabel2.Text = "监视器2";
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Location = new System.Drawing.Point(511, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(502, 344);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "平移图像";
             // 
-            // menuStrip
+            // pictureBox2
             // 
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.摄像机ToolStripMenuItem,
-            this.控制器ToolStripMenuItem,
-            this.继电器ToolStripMenuItem,
-            this.选项ToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1007, 28);
-            this.menuStrip.TabIndex = 9;
-            this.menuStrip.Text = "menuStrip1";
+            this.pictureBox2.Location = new System.Drawing.Point(7, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(494, 313);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
-            // 摄像机ToolStripMenuItem
+            // Cam
             // 
-            this.摄像机ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.摄像机1ToolStripMenuItem,
-            this.摄像机2ToolStripMenuItem});
-            this.摄像机ToolStripMenuItem.Name = "摄像机ToolStripMenuItem";
-            this.摄像机ToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.摄像机ToolStripMenuItem.Text = "摄像机";
+            this.Cam.Controls.Add(this.pictureBox1);
+            this.Cam.Location = new System.Drawing.Point(3, 3);
+            this.Cam.Name = "Cam";
+            this.Cam.Size = new System.Drawing.Size(502, 344);
+            this.Cam.TabIndex = 0;
+            this.Cam.TabStop = false;
+            this.Cam.Text = "角度图像";
             // 
-            // 摄像机1ToolStripMenuItem
+            // pictureBox1
             // 
-            this.摄像机1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.连接ToolStripMenuItem});
-            this.摄像机1ToolStripMenuItem.Name = "摄像机1ToolStripMenuItem";
-            this.摄像机1ToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.摄像机1ToolStripMenuItem.Text = "摄像机1";
+            this.pictureBox1.Location = new System.Drawing.Point(7, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(494, 313);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // 连接ToolStripMenuItem
+            // groupBox3
             // 
-            this.连接ToolStripMenuItem.Name = "连接ToolStripMenuItem";
-            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
-            this.连接ToolStripMenuItem.Text = "连接";
+            this.groupBox3.Controls.Add(this.pictureBox3);
+            this.groupBox3.Location = new System.Drawing.Point(3, 353);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(502, 344);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "二维能量分布图";
             // 
-            // 摄像机2ToolStripMenuItem
+            // pictureBox3
             // 
-            this.摄像机2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.连接到ToolStripMenuItem});
-            this.摄像机2ToolStripMenuItem.Name = "摄像机2ToolStripMenuItem";
-            this.摄像机2ToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.摄像机2ToolStripMenuItem.Text = "摄像机2";
+            this.pictureBox3.Location = new System.Drawing.Point(7, 25);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(494, 313);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
-            // 连接到ToolStripMenuItem
+            // groupBox1
             // 
-            this.连接到ToolStripMenuItem.Name = "连接到ToolStripMenuItem";
-            this.连接到ToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
-            this.连接到ToolStripMenuItem.Text = "连接到...";
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Location = new System.Drawing.Point(1019, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(295, 338);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "数据显示";
             // 
-            // 控制器ToolStripMenuItem
+            // flowLayoutPanel1
             // 
-            this.控制器ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.连接ToolStripMenuItem1});
-            this.控制器ToolStripMenuItem.Name = "控制器ToolStripMenuItem";
-            this.控制器ToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.控制器ToolStripMenuItem.Text = "控制器";
+            this.flowLayoutPanel1.Controls.Add(this.panel8);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel5);
+            this.flowLayoutPanel1.Controls.Add(this.panel6);
+            this.flowLayoutPanel1.Controls.Add(this.panel7);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 16);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(287, 322);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // 连接ToolStripMenuItem1
+            // panel8
             // 
-            this.连接ToolStripMenuItem1.Name = "连接ToolStripMenuItem1";
-            this.连接ToolStripMenuItem1.Size = new System.Drawing.Size(114, 26);
-            this.连接ToolStripMenuItem1.Text = "连接";
+            this.panel8.Controls.Add(this.splitContainer8);
+            this.panel8.Location = new System.Drawing.Point(0, 10);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(287, 28);
+            this.panel8.TabIndex = 2;
             // 
-            // 继电器ToolStripMenuItem
+            // splitContainer8
             // 
-            this.继电器ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.参数ToolStripMenuItem});
-            this.继电器ToolStripMenuItem.Name = "继电器ToolStripMenuItem";
-            this.继电器ToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.继电器ToolStripMenuItem.Text = "继电器";
+            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer8.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer8.Name = "splitContainer8";
             // 
-            // 参数ToolStripMenuItem
+            // splitContainer8.Panel1
             // 
-            this.参数ToolStripMenuItem.Name = "参数ToolStripMenuItem";
-            this.参数ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
-            this.参数ToolStripMenuItem.Text = "参数";
+            this.splitContainer8.Panel1.Controls.Add(this.label8);
             // 
-            // 选项ToolStripMenuItem
+            // splitContainer8.Panel2
             // 
-            this.选项ToolStripMenuItem.Name = "选项ToolStripMenuItem";
-            this.选项ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
-            this.选项ToolStripMenuItem.Text = "选项";
+            this.splitContainer8.Panel2.Controls.Add(this.textBox8);
+            this.splitContainer8.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer8.SplitterDistance = 108;
+            this.splitContainer8.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(28, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 15);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "X轴宽度";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(3, 0);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(171, 25);
+            this.textBox8.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.CamLabel);
-            this.panel1.Controls.Add(this.RealPlayWnd1);
-            this.panel1.Location = new System.Drawing.Point(12, 48);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Controls.Add(this.splitContainer1);
+            this.panel1.Location = new System.Drawing.Point(0, 48);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 375);
-            this.panel1.TabIndex = 33;
+            this.panel1.Size = new System.Drawing.Size(287, 28);
+            this.panel1.TabIndex = 0;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.CausesValidation = false;
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer1.SplitterDistance = 108;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Y轴宽度";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(171, 25);
+            this.textBox1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.CamLabel2);
-            this.panel2.Controls.Add(this.RealPlayWnd2);
-            this.panel2.Location = new System.Drawing.Point(516, 48);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Controls.Add(this.splitContainer2);
+            this.panel2.Location = new System.Drawing.Point(0, 86);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(477, 375);
-            this.panel2.TabIndex = 34;
+            this.panel2.Size = new System.Drawing.Size(287, 28);
+            this.panel2.TabIndex = 1;
             // 
-            // AxisGroupBox
+            // splitContainer2
             // 
-            this.AxisGroupBox.Controls.Add(this.rAxis);
-            this.AxisGroupBox.Controls.Add(this.zAxis);
-            this.AxisGroupBox.Controls.Add(this.yAxis);
-            this.AxisGroupBox.Controls.Add(this.xAxis);
-            this.AxisGroupBox.Location = new System.Drawing.Point(23, 121);
-            this.AxisGroupBox.Margin = new System.Windows.Forms.Padding(4);
-            this.AxisGroupBox.Name = "AxisGroupBox";
-            this.AxisGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AxisGroupBox.Size = new System.Drawing.Size(201, 99);
-            this.AxisGroupBox.TabIndex = 35;
-            this.AxisGroupBox.TabStop = false;
-            this.AxisGroupBox.Text = "轴选择";
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
             // 
-            // rAxis
+            // splitContainer2.Panel1
             // 
-            this.rAxis.AutoSize = true;
-            this.rAxis.Location = new System.Drawing.Point(107, 66);
-            this.rAxis.Margin = new System.Windows.Forms.Padding(4);
-            this.rAxis.Name = "rAxis";
-            this.rAxis.Size = new System.Drawing.Size(36, 19);
-            this.rAxis.TabIndex = 3;
-            this.rAxis.TabStop = true;
-            this.rAxis.Text = "R";
-            this.rAxis.UseVisualStyleBackColor = true;
+            this.splitContainer2.Panel1.Controls.Add(this.label2);
             // 
-            // zAxis
+            // splitContainer2.Panel2
             // 
-            this.zAxis.AutoSize = true;
-            this.zAxis.Location = new System.Drawing.Point(23, 66);
-            this.zAxis.Margin = new System.Windows.Forms.Padding(4);
-            this.zAxis.Name = "zAxis";
-            this.zAxis.Size = new System.Drawing.Size(36, 19);
-            this.zAxis.TabIndex = 2;
-            this.zAxis.TabStop = true;
-            this.zAxis.Text = "Z";
-            this.zAxis.UseVisualStyleBackColor = true;
+            this.splitContainer2.Panel2.Controls.Add(this.textBox2);
+            this.splitContainer2.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer2.SplitterDistance = 108;
+            this.splitContainer2.TabIndex = 0;
             // 
-            // yAxis
+            // label2
             // 
-            this.yAxis.AutoSize = true;
-            this.yAxis.Location = new System.Drawing.Point(107, 28);
-            this.yAxis.Margin = new System.Windows.Forms.Padding(4);
-            this.yAxis.Name = "yAxis";
-            this.yAxis.Size = new System.Drawing.Size(36, 19);
-            this.yAxis.TabIndex = 1;
-            this.yAxis.TabStop = true;
-            this.yAxis.Text = "Y";
-            this.yAxis.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "形心X轴坐标";
             // 
-            // xAxis
+            // textBox2
             // 
-            this.xAxis.AutoSize = true;
-            this.xAxis.Checked = true;
-            this.xAxis.Location = new System.Drawing.Point(23, 28);
-            this.xAxis.Margin = new System.Windows.Forms.Padding(4);
-            this.xAxis.Name = "xAxis";
-            this.xAxis.Size = new System.Drawing.Size(36, 19);
-            this.xAxis.TabIndex = 0;
-            this.xAxis.TabStop = true;
-            this.xAxis.Text = "X";
-            this.xAxis.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(3, 0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(171, 25);
+            this.textBox2.TabIndex = 0;
             // 
-            // StartMoveButton
+            // panel3
             // 
-            this.StartMoveButton.Location = new System.Drawing.Point(16, 38);
-            this.StartMoveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.StartMoveButton.Name = "StartMoveButton";
-            this.StartMoveButton.Size = new System.Drawing.Size(100, 38);
-            this.StartMoveButton.TabIndex = 37;
-            this.StartMoveButton.Text = "运动";
-            this.StartMoveButton.UseVisualStyleBackColor = true;
-            this.StartMoveButton.Click += new System.EventHandler(this.StartMoveButton_Click);
+            this.panel3.Controls.Add(this.splitContainer3);
+            this.panel3.Location = new System.Drawing.Point(0, 124);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(287, 28);
+            this.panel3.TabIndex = 1;
             // 
-            // StopMoveButton
+            // splitContainer3
             // 
-            this.StopMoveButton.Location = new System.Drawing.Point(16, 105);
-            this.StopMoveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.StopMoveButton.Name = "StopMoveButton";
-            this.StopMoveButton.Size = new System.Drawing.Size(100, 38);
-            this.StopMoveButton.TabIndex = 38;
-            this.StopMoveButton.Text = "停止";
-            this.StopMoveButton.UseVisualStyleBackColor = true;
-            this.StopMoveButton.Click += new System.EventHandler(this.StopMoveButton_Click);
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
             // 
-            // PreviewButton
+            // splitContainer3.Panel1
             // 
-            this.PreviewButton.Location = new System.Drawing.Point(15, 38);
-            this.PreviewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PreviewButton.Name = "PreviewButton";
-            this.PreviewButton.Size = new System.Drawing.Size(100, 38);
-            this.PreviewButton.TabIndex = 10;
-            this.PreviewButton.Text = "预览";
-            this.PreviewButton.UseVisualStyleBackColor = true;
-            this.PreviewButton.Click += new System.EventHandler(this.PreviewButton_Click);
+            this.splitContainer3.Panel1.Controls.Add(this.label3);
             // 
-            // Controller
+            // splitContainer3.Panel2
             // 
-            this.Controller.Controls.Add(this.AutoMove);
-            this.Controller.Controls.Add(this.StopMoveButton);
-            this.Controller.Controls.Add(this.StartMoveButton);
-            this.Controller.Location = new System.Drawing.Point(12, 446);
-            this.Controller.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Controller.Name = "Controller";
-            this.Controller.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Controller.Size = new System.Drawing.Size(135, 245);
-            this.Controller.TabIndex = 39;
-            this.Controller.TabStop = false;
-            this.Controller.Text = "控制器";
+            this.splitContainer3.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer3.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer3.SplitterDistance = 108;
+            this.splitContainer3.TabIndex = 0;
             // 
-            // AutoMove
+            // label3
             // 
-            this.AutoMove.Location = new System.Drawing.Point(16, 172);
-            this.AutoMove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AutoMove.Name = "AutoMove";
-            this.AutoMove.Size = new System.Drawing.Size(100, 36);
-            this.AutoMove.TabIndex = 39;
-            this.AutoMove.Text = "自动校准";
-            this.AutoMove.UseVisualStyleBackColor = true;
-            this.AutoMove.Click += new System.EventHandler(this.AutoMove_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "形心Y轴坐标";
             // 
-            // Camera
+            // textBox3
             // 
-            this.Camera.Controls.Add(this.StopPreview);
-            this.Camera.Controls.Add(this.PreviewButton);
-            this.Camera.Location = new System.Drawing.Point(516, 444);
-            this.Camera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Camera.Name = "Camera";
-            this.Camera.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Camera.Size = new System.Drawing.Size(131, 247);
-            this.Camera.TabIndex = 40;
-            this.Camera.TabStop = false;
-            this.Camera.Text = "摄像机";
+            this.textBox3.Location = new System.Drawing.Point(3, 0);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(171, 25);
+            this.textBox3.TabIndex = 0;
             // 
-            // StopPreview
+            // panel4
             // 
-            this.StopPreview.Location = new System.Drawing.Point(15, 104);
-            this.StopPreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.StopPreview.Name = "StopPreview";
-            this.StopPreview.Size = new System.Drawing.Size(100, 38);
-            this.StopPreview.TabIndex = 11;
-            this.StopPreview.Text = "停止预览";
-            this.StopPreview.UseVisualStyleBackColor = true;
-            this.StopPreview.Click += new System.EventHandler(this.StopPreview_Click);
+            this.panel4.Controls.Add(this.splitContainer4);
+            this.panel4.Location = new System.Drawing.Point(0, 162);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(287, 28);
+            this.panel4.TabIndex = 1;
             // 
-            // ExitButton
+            // splitContainer4
             // 
-            this.ExitButton.Location = new System.Drawing.Point(881, 653);
-            this.ExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(100, 38);
-            this.ExitButton.TabIndex = 41;
-            this.ExitButton.Text = "退出";
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
             // 
-            // Relays
+            // splitContainer4.Panel1
             // 
-            this.Relays.Controls.Add(this.RelayBButton);
-            this.Relays.Controls.Add(this.RelayAButton);
-            this.Relays.Location = new System.Drawing.Point(678, 446);
-            this.Relays.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Relays.Name = "Relays";
-            this.Relays.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Relays.Size = new System.Drawing.Size(137, 244);
-            this.Relays.TabIndex = 42;
-            this.Relays.TabStop = false;
-            this.Relays.Text = "继电器";
+            this.splitContainer4.Panel1.Controls.Add(this.label4);
             // 
-            // RelayBButton
+            // splitContainer4.Panel2
             // 
-            this.RelayBButton.Location = new System.Drawing.Point(18, 104);
-            this.RelayBButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RelayBButton.Name = "RelayBButton";
-            this.RelayBButton.Size = new System.Drawing.Size(100, 38);
-            this.RelayBButton.TabIndex = 12;
-            this.RelayBButton.Text = "开";
-            this.RelayBButton.UseVisualStyleBackColor = true;
-            this.RelayBButton.Click += new System.EventHandler(this.button3_Click);
+            this.splitContainer4.Panel2.Controls.Add(this.textBox4);
+            this.splitContainer4.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer4.SplitterDistance = 108;
+            this.splitContainer4.TabIndex = 0;
             // 
-            // RelayAButton
+            // label4
             // 
-            this.RelayAButton.Location = new System.Drawing.Point(18, 38);
-            this.RelayAButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RelayAButton.Name = "RelayAButton";
-            this.RelayAButton.Size = new System.Drawing.Size(100, 38);
-            this.RelayAButton.TabIndex = 11;
-            this.RelayAButton.Text = "开";
-            this.RelayAButton.UseVisualStyleBackColor = true;
-            this.RelayAButton.Click += new System.EventHandler(this.button2_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "X轴偏移";
             // 
-            // Angle
+            // textBox4
             // 
-            this.Angle.Location = new System.Drawing.Point(23, 75);
-            this.Angle.Name = "Angle";
-            this.Angle.Size = new System.Drawing.Size(100, 25);
-            this.Angle.TabIndex = 43;
+            this.textBox4.Location = new System.Drawing.Point(3, 0);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(171, 25);
+            this.textBox4.TabIndex = 0;
             // 
-            // angle_label
+            // panel5
             // 
-            this.angle_label.AutoSize = true;
-            this.angle_label.Location = new System.Drawing.Point(23, 54);
-            this.angle_label.Name = "angle_label";
-            this.angle_label.Size = new System.Drawing.Size(213, 15);
-            this.angle_label.TabIndex = 44;
-            this.angle_label.Text = "转动角度(+:顺时针 -:逆时针)";
+            this.panel5.Controls.Add(this.splitContainer5);
+            this.panel5.Location = new System.Drawing.Point(0, 200);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(287, 28);
+            this.panel5.TabIndex = 1;
             // 
-            // ControlArgs
+            // splitContainer5
             // 
-            this.ControlArgs.Controls.Add(this.angle_label);
-            this.ControlArgs.Controls.Add(this.Angle);
-            this.ControlArgs.Controls.Add(this.AxisGroupBox);
-            this.ControlArgs.Location = new System.Drawing.Point(162, 446);
-            this.ControlArgs.Name = "ControlArgs";
-            this.ControlArgs.Size = new System.Drawing.Size(264, 245);
-            this.ControlArgs.TabIndex = 45;
-            this.ControlArgs.TabStop = false;
-            this.ControlArgs.Text = "手动控制参数";
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.label5);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.textBox5);
+            this.splitContainer5.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer5.SplitterDistance = 108;
+            this.splitContainer5.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Y轴偏移";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(3, 0);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(171, 25);
+            this.textBox5.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.splitContainer6);
+            this.panel6.Location = new System.Drawing.Point(0, 238);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(287, 28);
+            this.panel6.TabIndex = 1;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.label6);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.textBox6);
+            this.splitContainer6.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer6.SplitterDistance = 108;
+            this.splitContainer6.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "水平倾角";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(3, 0);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(171, 25);
+            this.textBox6.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.splitContainer7);
+            this.panel7.Location = new System.Drawing.Point(0, 276);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(287, 28);
+            this.panel7.TabIndex = 1;
+            // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Name = "splitContainer7";
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.label7);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.textBox7);
+            this.splitContainer7.Size = new System.Drawing.Size(287, 28);
+            this.splitContainer7.SplitterDistance = 108;
+            this.splitContainer7.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 15);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "垂直倾角";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(3, 0);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(171, 25);
+            this.textBox7.TabIndex = 0;
+            // 
+            // splitContainer9
+            // 
+            this.splitContainer9.Location = new System.Drawing.Point(1019, 353);
+            this.splitContainer9.Name = "splitContainer9";
+            this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer9.Panel1
+            // 
+            this.splitContainer9.Panel1.Controls.Add(this.pictureBox5);
+            this.splitContainer9.Panel1.Controls.Add(this.label9);
+            // 
+            // splitContainer9.Panel2
+            // 
+            this.splitContainer9.Panel2.Controls.Add(this.pictureBox6);
+            this.splitContainer9.Panel2.Controls.Add(this.label10);
+            this.splitContainer9.Size = new System.Drawing.Size(295, 344);
+            this.splitContainer9.SplitterDistance = 164;
+            this.splitContainer9.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 4);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 15);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "X轴能量分布";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(7, 23);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(282, 146);
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 15);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Y轴能量分布";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(6, 18);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(282, 139);
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
             // 
             // MainWindow
             // 
@@ -443,77 +647,139 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1007, 701);
-            this.Controls.Add(this.ControlArgs);
-            this.Controls.Add(this.Relays);
-            this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.Camera);
-            this.Controls.Add(this.Controller);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip);
-            this.MainMenuStrip = this.menuStrip;
+            this.ClientSize = new System.Drawing.Size(1367, 721);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(1025, 748);
             this.Name = "MainWindow";
             this.Text = "主界面";
-            ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd2)).EndInit();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Cam.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.splitContainer8.Panel1.ResumeLayout(false);
+            this.splitContainer8.Panel1.PerformLayout();
+            this.splitContainer8.Panel2.ResumeLayout(false);
+            this.splitContainer8.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
+            this.splitContainer8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.AxisGroupBox.ResumeLayout(false);
-            this.AxisGroupBox.PerformLayout();
-            this.Controller.ResumeLayout(false);
-            this.Camera.ResumeLayout(false);
-            this.Relays.ResumeLayout(false);
-            this.ControlArgs.ResumeLayout(false);
-            this.ControlArgs.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            this.splitContainer4.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel1.PerformLayout();
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            this.splitContainer5.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel1.PerformLayout();
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            this.splitContainer6.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel1.PerformLayout();
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            this.splitContainer7.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            this.splitContainer9.Panel1.ResumeLayout(false);
+            this.splitContainer9.Panel1.PerformLayout();
+            this.splitContainer9.Panel2.ResumeLayout(false);
+            this.splitContainer9.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
+            this.splitContainer9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox RealPlayWnd1;
-        private System.Windows.Forms.PictureBox RealPlayWnd2;
-        private System.Windows.Forms.Label CamLabel;
-        private System.Windows.Forms.Label CamLabel2;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem 控制器ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 连接ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 选项ToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox Cam;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.SplitContainer splitContainer8;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox AxisGroupBox;
-        private System.Windows.Forms.RadioButton rAxis;
-        private System.Windows.Forms.RadioButton zAxis;
-        private System.Windows.Forms.RadioButton yAxis;
-        private System.Windows.Forms.RadioButton xAxis;
-        private System.Windows.Forms.Button StartMoveButton;
-        private System.Windows.Forms.Button StopMoveButton;
-        private System.Windows.Forms.Button PreviewButton;
-        private System.Windows.Forms.GroupBox Controller;
-        private System.Windows.Forms.ToolStripMenuItem 摄像机ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 摄像机1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 连接ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 摄像机2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 连接到ToolStripMenuItem;
-        private System.Windows.Forms.GroupBox Camera;
-        private System.Windows.Forms.Button StopPreview;
-        private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Button AutoMove;
-        private System.Windows.Forms.GroupBox Relays;
-        private System.Windows.Forms.Button RelayBButton;
-        private System.Windows.Forms.Button RelayAButton;
-        private System.Windows.Forms.TextBox Angle;
-        private System.Windows.Forms.Label angle_label;
-        private System.Windows.Forms.GroupBox ControlArgs;
-        private System.Windows.Forms.ToolStripMenuItem 继电器ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 参数ToolStripMenuItem;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.SplitContainer splitContainer9;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label10;
     }
 }
