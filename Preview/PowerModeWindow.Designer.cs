@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PowerModeWindow));
             this.logo = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.LowPowerMode = new System.Windows.Forms.Button();
+            this.MediumPowerMode = new System.Windows.Forms.Button();
+            this.HighPowerMode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -60,46 +60,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "功率模式";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(30, 3);
-            this.button1.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 59);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "低功率";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.LowPowerMode);
+            this.flowLayoutPanel1.Controls.Add(this.MediumPowerMode);
+            this.flowLayoutPanel1.Controls.Add(this.HighPowerMode);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 24);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(522, 70);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // button2
+            // LowPowerMode
             // 
-            this.button2.Location = new System.Drawing.Point(199, 3);
-            this.button2.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 59);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "中功率";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.LowPowerMode.Location = new System.Drawing.Point(30, 3);
+            this.LowPowerMode.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            this.LowPowerMode.Name = "LowPowerMode";
+            this.LowPowerMode.Size = new System.Drawing.Size(109, 59);
+            this.LowPowerMode.TabIndex = 0;
+            this.LowPowerMode.Text = "低功率";
+            this.LowPowerMode.UseVisualStyleBackColor = true;
+            this.LowPowerMode.Click += new System.EventHandler(this.LowPowerMode_Click);
             // 
-            // button3
+            // MediumPowerMode
             // 
-            this.button3.Location = new System.Drawing.Point(368, 3);
-            this.button3.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 59);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "高功率";
-            this.button3.UseVisualStyleBackColor = true;
+            this.MediumPowerMode.Location = new System.Drawing.Point(199, 3);
+            this.MediumPowerMode.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            this.MediumPowerMode.Name = "MediumPowerMode";
+            this.MediumPowerMode.Size = new System.Drawing.Size(109, 59);
+            this.MediumPowerMode.TabIndex = 1;
+            this.MediumPowerMode.Text = "中功率";
+            this.MediumPowerMode.UseVisualStyleBackColor = true;
+            this.MediumPowerMode.Click += new System.EventHandler(this.MediumPowerMode_Click);
+            // 
+            // HighPowerMode
+            // 
+            this.HighPowerMode.Location = new System.Drawing.Point(368, 3);
+            this.HighPowerMode.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
+            this.HighPowerMode.Name = "HighPowerMode";
+            this.HighPowerMode.Size = new System.Drawing.Size(109, 59);
+            this.HighPowerMode.TabIndex = 2;
+            this.HighPowerMode.Text = "高功率";
+            this.HighPowerMode.UseVisualStyleBackColor = true;
+            this.HighPowerMode.Click += new System.EventHandler(this.HighPowerMode_Click);
             // 
             // PowerModeWindow
             // 
@@ -122,8 +124,8 @@
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button LowPowerMode;
+        private System.Windows.Forms.Button MediumPowerMode;
+        private System.Windows.Forms.Button HighPowerMode;
     }
 }

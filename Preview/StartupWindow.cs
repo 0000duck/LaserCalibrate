@@ -32,9 +32,9 @@ namespace Preview
 
         private void PowerModeBtn_Click(object sender, EventArgs e)
         {
-            var debugWindow = new PowerModeWindow();
-            debugWindow.Closed += (o, args) => this.Show();
-            debugWindow.Show();
+            var powerModeWindow = new PowerModeWindow();
+            powerModeWindow.Closed += (o, args) => this.Close();
+            powerModeWindow.Show();
             this.Hide();
         }
     }

@@ -35,11 +35,12 @@
             this.PowerModeBtn = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.btn_panel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Replay = new System.Windows.Forms.Button();
             this.logo_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.btn_panel.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // logo_panel
@@ -69,7 +70,7 @@
             this.DebugBtn.Location = new System.Drawing.Point(15, 10);
             this.DebugBtn.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.DebugBtn.Name = "DebugBtn";
-            this.DebugBtn.Size = new System.Drawing.Size(170, 95);
+            this.DebugBtn.Size = new System.Drawing.Size(125, 57);
             this.DebugBtn.TabIndex = 1;
             this.DebugBtn.Text = "调试";
             this.DebugBtn.UseVisualStyleBackColor = true;
@@ -78,22 +79,22 @@
             // PowerModeBtn
             // 
             this.PowerModeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PowerModeBtn.Location = new System.Drawing.Point(15, 125);
+            this.PowerModeBtn.Location = new System.Drawing.Point(170, 10);
             this.PowerModeBtn.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.PowerModeBtn.Name = "PowerModeBtn";
-            this.PowerModeBtn.Size = new System.Drawing.Size(170, 95);
+            this.PowerModeBtn.Size = new System.Drawing.Size(125, 57);
             this.PowerModeBtn.TabIndex = 2;
-            this.PowerModeBtn.Text = "工作模式";
+            this.PowerModeBtn.Text = "工作模式选择";
             this.PowerModeBtn.UseVisualStyleBackColor = true;
             this.PowerModeBtn.Click += new System.EventHandler(this.PowerModeBtn_Click);
             // 
             // Exit
             // 
             this.Exit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Exit.Location = new System.Drawing.Point(15, 240);
+            this.Exit.Location = new System.Drawing.Point(480, 10);
             this.Exit.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(170, 95);
+            this.Exit.Size = new System.Drawing.Size(135, 57);
             this.Exit.TabIndex = 3;
             this.Exit.Text = "退出";
             this.Exit.UseVisualStyleBackColor = true;
@@ -101,29 +102,34 @@
             // 
             // btn_panel
             // 
-            this.btn_panel.Controls.Add(this.tableLayoutPanel1);
+            this.btn_panel.Controls.Add(this.flowLayoutPanel1);
             this.btn_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_panel.Location = new System.Drawing.Point(0, 313);
             this.btn_panel.Name = "btn_panel";
             this.btn_panel.Size = new System.Drawing.Size(1348, 408);
             this.btn_panel.TabIndex = 4;
             // 
-            // tableLayoutPanel1
+            // flowLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.PowerModeBtn, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.DebugBtn, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Exit, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(571, 53);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 343);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.flowLayoutPanel1.Controls.Add(this.DebugBtn);
+            this.flowLayoutPanel1.Controls.Add(this.PowerModeBtn);
+            this.flowLayoutPanel1.Controls.Add(this.Replay);
+            this.flowLayoutPanel1.Controls.Add(this.Exit);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(350, 166);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(649, 77);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // Replay
+            // 
+            this.Replay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Replay.Location = new System.Drawing.Point(325, 10);
+            this.Replay.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.Replay.Name = "Replay";
+            this.Replay.Size = new System.Drawing.Size(125, 57);
+            this.Replay.TabIndex = 4;
+            this.Replay.Text = "回放";
+            this.Replay.UseVisualStyleBackColor = true;
             // 
             // StartupWindow
             // 
@@ -138,7 +144,7 @@
             this.logo_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.btn_panel.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -151,6 +157,7 @@
         private System.Windows.Forms.Button PowerModeBtn;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Panel btn_panel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button Replay;
     }
 }

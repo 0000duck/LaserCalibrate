@@ -36,7 +36,7 @@
             this.PasswordTextbox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.exit = new System.Windows.Forms.Button();
+            this.ExitBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -110,22 +110,22 @@
             this.panel1.Size = new System.Drawing.Size(289, 121);
             this.panel1.TabIndex = 6;
             // 
-            // exit
+            // ExitBtn
             // 
-            this.exit.Location = new System.Drawing.Point(703, 612);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(116, 42);
-            this.exit.TabIndex = 7;
-            this.exit.Text = "退出";
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
+            this.ExitBtn.Location = new System.Drawing.Point(703, 612);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(116, 42);
+            this.ExitBtn.TabIndex = 7;
+            this.ExitBtn.Text = "退出";
+            this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.Click += new System.EventHandler(this.exit_Click);
             // 
             // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 721);
-            this.Controls.Add(this.exit);
+            this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.Logo);
@@ -149,7 +149,7 @@
         private System.Windows.Forms.TextBox PasswordTextbox;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Button ExitBtn;
     }
 }
 

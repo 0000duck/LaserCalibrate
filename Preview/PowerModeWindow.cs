@@ -17,11 +17,24 @@ namespace Preview
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void LowPowerMode_Click(object sender, EventArgs e)
         {
-            var mainWindow=new MainWindow();
-            mainWindow.Closed += (o, a) => this.Close();
-            mainWindow.Show();
+            Start(PowerMode.Low);
+        }
+
+        private void MediumPowerMode_Click(object sender, EventArgs e)
+        {
+            Start(PowerMode.Medium);
+        }
+
+        private void HighPowerMode_Click(object sender, EventArgs e)
+        {
+            Start(PowerMode.High);
+        }
+
+        private void Start(PowerMode mode)
+        {
+            Application.Run(new MainWindow(mode,this));
             this.Hide();
         }
     }
