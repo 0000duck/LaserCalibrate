@@ -57,61 +57,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camera.cs" />
-    <Compile Include="CHCNetSDK.cs" />
-    <Compile Include="ControlClass.cs" />
-    <Compile Include="Controller.cs" />
-    <Compile Include="DebugWindow.cs">
+    <Compile Include="Models\Camera.cs" />
+    <Compile Include="Models\CHCNetSDK.cs" />
+    <Compile Include="Controller\ControlClass.cs" />
+    <Compile Include="Models\MotorController.cs" />
+    <Compile Include="Views\DebugWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DebugWindow.Designer.cs">
+    <Compile Include="Views\DebugWindow.Designer.cs">
       <DependentUpon>DebugWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageX-2.cs" />
-    <Compile Include="LoginWindow.cs">
+    <Compile Include="Models\ImageX-2.cs" />
+    <Compile Include="Views\LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginWindow.Designer.cs">
+    <Compile Include="Views\LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.cs">
+    <Compile Include="Views\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="Views\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="PowerModeWindow.cs">
+    <Compile Include="Views\PowerModeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PowerModeWindow.Designer.cs">
+    <Compile Include="Views\PowerModeWindow.Designer.cs">
       <DependentUpon>PowerModeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relay.cs" />
-    <Compile Include="ReplayWindow.cs">
+    <Compile Include="Models\Relay.cs" />
+    <Compile Include="Views\ReplayWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReplayWindow.Designer.cs">
+    <Compile Include="Views\ReplayWindow.Designer.cs">
       <DependentUpon>ReplayWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartupWindow.cs">
+    <Compile Include="Views\StartupWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartupWindow.Designer.cs">
+    <Compile Include="Views\StartupWindow.Designer.cs">
       <DependentUpon>StartupWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Zmcaux.cs" />
-    <EmbeddedResource Include="DebugWindow.resx">
+    <Compile Include="Models\Zmcaux.cs" />
+    <EmbeddedResource Include="Views\DebugWindow.resx">
       <DependentUpon>DebugWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginWindow.resx">
+    <EmbeddedResource Include="Views\LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="Views\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PowerModeWindow.resx">
+    <EmbeddedResource Include="Views\PowerModeWindow.resx">
       <DependentUpon>PowerModeWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,10 +124,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReplayWindow.resx">
+    <EmbeddedResource Include="Views\ReplayWindow.resx">
       <DependentUpon>ReplayWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartupWindow.resx">
+    <EmbeddedResource Include="Views\StartupWindow.resx">
       <DependentUpon>StartupWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

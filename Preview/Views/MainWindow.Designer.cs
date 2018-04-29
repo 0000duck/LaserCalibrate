@@ -30,11 +30,7 @@
             this.ShiftPicture = new System.Windows.Forms.PictureBox();
             this.Cam = new System.Windows.Forms.GroupBox();
             this.AnglePicture = new System.Windows.Forms.PictureBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -69,16 +65,26 @@
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
-            this.BackBtn = new System.Windows.Forms.Button();
-            this.ExitBtn = new System.Windows.Forms.Button();
             this.PowerModeLabel = new System.Windows.Forms.Label();
+            this.ExitBtn = new System.Windows.Forms.Button();
+            this.BackBtn = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShiftPicture)).BeginInit();
             this.Cam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AnglePicture)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
+            this.splitContainer9.Panel1.SuspendLayout();
+            this.splitContainer9.Panel2.SuspendLayout();
+            this.splitContainer9.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -121,10 +127,13 @@
             this.splitContainer7.Panel1.SuspendLayout();
             this.splitContainer7.Panel2.SuspendLayout();
             this.splitContainer7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
-            this.splitContainer9.Panel1.SuspendLayout();
-            this.splitContainer9.Panel2.SuspendLayout();
-            this.splitContainer9.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -185,55 +194,23 @@
             this.AnglePicture.TabIndex = 0;
             this.AnglePicture.TabStop = false;
             // 
-            // tabControl1
+            // splitContainer9
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(3, 353);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(525, 344);
-            this.tabControl1.TabIndex = 5;
+            this.splitContainer9.Location = new System.Drawing.Point(661, 353);
+            this.splitContainer9.Name = "splitContainer9";
             // 
-            // tabPage1
+            // splitContainer9.Panel1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(517, 315);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "二维能量分布图像";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.splitContainer9.Panel1.Controls.Add(this.groupBox1);
             // 
-            // tabPage2
+            // splitContainer9.Panel2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(517, 315);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "三维能量分布图像";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(517, 315);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "X轴能量分布图";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(517, 315);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Y轴能量分布图";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.splitContainer9.Panel2.Controls.Add(this.PowerModeLabel);
+            this.splitContainer9.Panel2.Controls.Add(this.ExitBtn);
+            this.splitContainer9.Panel2.Controls.Add(this.BackBtn);
+            this.splitContainer9.Size = new System.Drawing.Size(653, 344);
+            this.splitContainer9.SplitterDistance = 371;
+            this.splitContainer9.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -598,33 +575,14 @@
             this.textBox7.Size = new System.Drawing.Size(171, 25);
             this.textBox7.TabIndex = 0;
             // 
-            // splitContainer9
+            // PowerModeLabel
             // 
-            this.splitContainer9.Location = new System.Drawing.Point(661, 353);
-            this.splitContainer9.Name = "splitContainer9";
-            // 
-            // splitContainer9.Panel1
-            // 
-            this.splitContainer9.Panel1.Controls.Add(this.groupBox1);
-            // 
-            // splitContainer9.Panel2
-            // 
-            this.splitContainer9.Panel2.Controls.Add(this.PowerModeLabel);
-            this.splitContainer9.Panel2.Controls.Add(this.ExitBtn);
-            this.splitContainer9.Panel2.Controls.Add(this.BackBtn);
-            this.splitContainer9.Size = new System.Drawing.Size(653, 344);
-            this.splitContainer9.SplitterDistance = 371;
-            this.splitContainer9.TabIndex = 6;
-            // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(15, 113);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(93, 36);
-            this.BackBtn.TabIndex = 0;
-            this.BackBtn.Text = "返回";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            this.PowerModeLabel.AutoSize = true;
+            this.PowerModeLabel.Location = new System.Drawing.Point(12, 43);
+            this.PowerModeLabel.Name = "PowerModeLabel";
+            this.PowerModeLabel.Size = new System.Drawing.Size(82, 15);
+            this.PowerModeLabel.TabIndex = 2;
+            this.PowerModeLabel.Text = "工作模式：";
             // 
             // ExitBtn
             // 
@@ -636,14 +594,101 @@
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // PowerModeLabel
+            // BackBtn
             // 
-            this.PowerModeLabel.AutoSize = true;
-            this.PowerModeLabel.Location = new System.Drawing.Point(12, 43);
-            this.PowerModeLabel.Name = "PowerModeLabel";
-            this.PowerModeLabel.Size = new System.Drawing.Size(82, 15);
-            this.PowerModeLabel.TabIndex = 2;
-            this.PowerModeLabel.Text = "工作模式：";
+            this.BackBtn.Location = new System.Drawing.Point(15, 113);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(93, 36);
+            this.BackBtn.TabIndex = 0;
+            this.BackBtn.Text = "返回";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(3, 353);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(525, 344);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.pictureBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(517, 315);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "二维能量分布图像";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(517, 315);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "三维能量分布图像";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Black;
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(517, 315);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "X轴能量分布图";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.pictureBox3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(517, 315);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Y轴能量分布图";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(511, 309);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(511, 309);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Black;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(517, 315);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // MainWindow
             // 
@@ -661,7 +706,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ShiftPicture)).EndInit();
             this.Cam.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AnglePicture)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.splitContainer9.Panel1.ResumeLayout(false);
+            this.splitContainer9.Panel2.ResumeLayout(false);
+            this.splitContainer9.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
+            this.splitContainer9.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -720,11 +769,13 @@
             this.splitContainer7.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
-            this.splitContainer9.Panel1.ResumeLayout(false);
-            this.splitContainer9.Panel2.ResumeLayout(false);
-            this.splitContainer9.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
-            this.splitContainer9.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -779,5 +830,8 @@
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.Label PowerModeLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
