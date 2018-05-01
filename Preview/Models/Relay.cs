@@ -53,31 +53,22 @@ namespace Preview
         /// <summary>
         /// 打开串口
         /// </summary>
-        public bool OpenSerialPort(string comName)
+        private void OpenSerialPort(string comName)
         {
 
             //关闭时点击，则设置好端口，波特率后打开
-            try
-            {
-                _comm.PortName = comName; //串口名 COM
-                _comm.BaudRate = 9600; //波特率  9600
-                _comm.DataBits = 8; // 数据位 8
-                _comm.ReadBufferSize = 4096;
-                _comm.StopBits = StopBits.One;
-                _comm.Parity = Parity.None;
-                _comm.Open();
-            }
-            catch (Exception ex)
-            {
 
-                //捕获到异常信息，创建一个新的comm对象，之前的不能用了。
-                _comm = new SerialPort();
-                return false;
-            }
-            return true;
+            _comm.PortName = comName; //串口名 COM
+            _comm.BaudRate = 9600; //波特率  9600
+            _comm.DataBits = 8; // 数据位 8
+            _comm.ReadBufferSize = 4096;
+            _comm.StopBits = StopBits.One;
+            _comm.Parity = Parity.None;
+            _comm.Open();
+
         }
 
-        public void CloseSerialPort()
+        private void CloseSerialPort()
         {
             if(_comm.IsOpen)
                 _comm.Close();

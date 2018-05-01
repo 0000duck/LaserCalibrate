@@ -12,6 +12,7 @@ namespace Preview
 {
     public partial class DebugWindow : Form
     {
+        private ControlClass _control=new ControlClass();
         public DebugWindow()
         {
             InitializeComponent();

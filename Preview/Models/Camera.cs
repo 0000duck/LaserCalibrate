@@ -12,13 +12,15 @@ using static Preview.CHCNetSDK;
 
 namespace Preview
 {
-
+    /// <summary>
+    /// 视频采集类，负责连接摄像头，获取图像
+    /// </summary>
     class VideoCapture
     {
         private Camera CamLeft { get; }
         private Camera CamRight { get; }
 
-        public (Bitmap leftBitmap, Bitmap rightBitmap) BitMapPicture => CaptureBMP();
+        public Bitmap[] BitMapPicture => CaptureBMP();
         public bool IsPreviewing;
 
         public VideoCapture(DVRLoginInfo leftDvrLoginInfo,DVRLoginInfo rightDvrLoginInfo)
@@ -35,20 +37,29 @@ namespace Preview
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool Login()
         {
             return CamLeft.Login() && CamRight.Login();
         }
 
-
-        public void StartPreview(IntPtr HandleA,IntPtr HandleB)
+        /// <summary>
+        /// 启动实时画面预览
+        /// </summary>
+        /// <param name="picA">角度图像显示的picBox</param>
+        /// <param name="picB">位移图像显示的picBox</param>
+        public void StartPreview(PictureBox picA,PictureBox picB)
         {
-            CamLeft.StartPreview(HandleA);
-            CamRight.StartPreview(HandleB);
+            CamLeft.StartPreview(picA.Handle);
+            CamRight.StartPreview(picB.Handle);
             IsPreviewing = true;
         }
-
+        /// <summary>
+        /// 停止预览
+        /// </summary>
         public void StopPreview()
         {
             CamLeft.StopPreview();
@@ -59,9 +70,10 @@ namespace Preview
         /// <summary>
         /// Capture BMP maps
         /// </summary>
-        /// <returns>bmpMaps[0] lightImg,bmpMaps[1] baseImg</returns>
-        public (Bitmap leftBitmap, Bitmap rightBitmap) CaptureBMP()
+        /// <returns>bmpMaps[0] leftImg,bmpMaps[1] baseImg</returns>
+        public Bitmap[] CaptureBMP()
         {
+            //TODO：重写实现
             const string leftImgName = "Left.bmp";
             const string rightImgName = "Right.bmp";
             if (File.Exists(leftImgName))
@@ -73,20 +85,20 @@ namespace Preview
             {
                 File.Delete(rightImgName);
             }
-
+            //CapturePicture函数只能抓取picBox中的画面并保存在本地，无法实现实时显示
             if (!NET_DVR_CapturePicture(CamLeft.RealPlayHandle, leftImgName)&&!NET_DVR_CapturePicture(CamRight.RealPlayHandle, rightImgName))
             {
                 var iLastErr = NET_DVR_GetLastError();
                 throw new Exception("NET_DVR_CapturePicture failed, error code= " + iLastErr);
             }
             
-            return ( new Bitmap(leftImgName), new Bitmap(rightImgName) );
+            return new Bitmap[2]{new Bitmap(leftImgName), new Bitmap(rightImgName)};
 
         }
 
         public void Record()
         {
-
+            throw new NotImplementedException();
         }
 
 
@@ -109,8 +121,6 @@ namespace Preview
         public short DVRPortNumber;
         public string DVRUserName;
         public string DVRPassword;
-
-
 
     }
 
@@ -144,7 +154,6 @@ namespace Preview
 
         }
 
-        private Camera(){  }
 
         public bool Login()
         {
@@ -202,20 +211,17 @@ namespace Preview
             if(RealPlayHandle>=0)
                 NET_DVR_StopRealPlay(RealPlayHandle);
         }
-
+        /// <summary>
+        /// 视频回调解码
+        /// </summary>
+        /// <param name="lRealHandle"></param>
+        /// <param name="dwDataType"></param>
+        /// <param name="pBuffer"></param>
+        /// <param name="dwBufSize"></param>
+        /// <param name="pUser"></param>
         public void RealDataCallBack(Int32 lRealHandle, UInt32 dwDataType, IntPtr pBuffer, UInt32 dwBufSize, IntPtr pUser)
         {
-            if (dwBufSize > 0)
-            {
-                byte[] sData = new byte[dwBufSize];
-                Marshal.Copy(pBuffer, sData, 0, (Int32)dwBufSize);
-
-                string str = "实时流数据.ps";
-                FileStream fs = new FileStream(str, FileMode.Create);
-                int iLen = (int)dwBufSize;
-                fs.Write(sData, 0, iLen);
-                fs.Close();
-            }
+            //TODO:完成解码
         }
 
     }

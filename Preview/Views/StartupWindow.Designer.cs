@@ -123,6 +123,7 @@
             // Replay
             // 
             this.Replay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Replay.Enabled = false;
             this.Replay.Location = new System.Drawing.Point(325, 10);
             this.Replay.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.Replay.Name = "Replay";
@@ -158,6 +159,6 @@
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Panel btn_panel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button Replay;
+        public System.Windows.Forms.Button Replay;
     }
 }
