@@ -83,7 +83,7 @@ namespace Preview
             //TODO:更新3D数据图
             //图像在img.GrayBitmap
             heightMap = new Image<Gray, Byte>(img.GrayBitmap);
-            colormat  = new Image<Bgr, Byte>(img.ColorMap);
+            colormat  = new Image<Rgb, Byte>(img.ColorMap);
         }
 
         // --- Fields ---
