@@ -25,6 +25,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ShiftPicture = new System.Windows.Forms.PictureBox();
@@ -36,46 +37,48 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.XWidth = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.YWidth = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.XCoord = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.YCoord = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.XBias = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.YBias = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.HorizontalAngle = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.VerticalAngle = new System.Windows.Forms.TextBox();
+            this.Calibrate = new System.Windows.Forms.Button();
             this.PowerModeLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Pic2D = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.openGLControl1 = new SharpGL.OpenGLControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.UpDateTask = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShiftPicture)).BeginInit();
@@ -129,10 +132,10 @@
             this.splitContainer7.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic2D)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.openGLControl1)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,6 +208,7 @@
             // 
             // splitContainer9.Panel2
             // 
+            this.splitContainer9.Panel2.Controls.Add(this.Calibrate);
             this.splitContainer9.Panel2.Controls.Add(this.PowerModeLabel);
             this.splitContainer9.Panel2.Controls.Add(this.ExitBtn);
             this.splitContainer9.Panel2.Controls.Add(this.BackBtn);
@@ -259,7 +263,7 @@
             // 
             // splitContainer8.Panel2
             // 
-            this.splitContainer8.Panel2.Controls.Add(this.textBox8);
+            this.splitContainer8.Panel2.Controls.Add(this.XWidth);
             this.splitContainer8.Size = new System.Drawing.Size(337, 30);
             this.splitContainer8.SplitterDistance = 126;
             this.splitContainer8.TabIndex = 0;
@@ -273,12 +277,12 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "X轴宽度";
             // 
-            // textBox8
+            // XWidth
             // 
-            this.textBox8.Location = new System.Drawing.Point(3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(171, 25);
-            this.textBox8.TabIndex = 0;
+            this.XWidth.Location = new System.Drawing.Point(3, 2);
+            this.XWidth.Name = "XWidth";
+            this.XWidth.Size = new System.Drawing.Size(171, 25);
+            this.XWidth.TabIndex = 0;
             // 
             // panel1
             // 
@@ -302,7 +306,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.YWidth);
             this.splitContainer1.Size = new System.Drawing.Size(337, 28);
             this.splitContainer1.SplitterDistance = 126;
             this.splitContainer1.TabIndex = 0;
@@ -316,12 +320,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Y轴宽度";
             // 
-            // textBox1
+            // YWidth
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 25);
-            this.textBox1.TabIndex = 0;
+            this.YWidth.Location = new System.Drawing.Point(3, 0);
+            this.YWidth.Name = "YWidth";
+            this.YWidth.Size = new System.Drawing.Size(171, 25);
+            this.YWidth.TabIndex = 0;
             // 
             // panel2
             // 
@@ -344,7 +348,7 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.textBox2);
+            this.splitContainer2.Panel2.Controls.Add(this.XCoord);
             this.splitContainer2.Size = new System.Drawing.Size(337, 28);
             this.splitContainer2.SplitterDistance = 126;
             this.splitContainer2.TabIndex = 0;
@@ -358,12 +362,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "形心X轴坐标";
             // 
-            // textBox2
+            // XCoord
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 25);
-            this.textBox2.TabIndex = 0;
+            this.XCoord.Location = new System.Drawing.Point(3, 0);
+            this.XCoord.Name = "XCoord";
+            this.XCoord.Size = new System.Drawing.Size(171, 25);
+            this.XCoord.TabIndex = 0;
             // 
             // panel3
             // 
@@ -386,7 +390,7 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer3.Panel2.Controls.Add(this.YCoord);
             this.splitContainer3.Size = new System.Drawing.Size(337, 28);
             this.splitContainer3.SplitterDistance = 126;
             this.splitContainer3.TabIndex = 0;
@@ -400,12 +404,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "形心Y轴坐标";
             // 
-            // textBox3
+            // YCoord
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(171, 25);
-            this.textBox3.TabIndex = 0;
+            this.YCoord.Location = new System.Drawing.Point(3, 0);
+            this.YCoord.Name = "YCoord";
+            this.YCoord.Size = new System.Drawing.Size(171, 25);
+            this.YCoord.TabIndex = 0;
             // 
             // panel4
             // 
@@ -428,7 +432,7 @@
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.textBox4);
+            this.splitContainer4.Panel2.Controls.Add(this.XBias);
             this.splitContainer4.Size = new System.Drawing.Size(337, 28);
             this.splitContainer4.SplitterDistance = 126;
             this.splitContainer4.TabIndex = 0;
@@ -442,12 +446,12 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "X轴偏移";
             // 
-            // textBox4
+            // XBias
             // 
-            this.textBox4.Location = new System.Drawing.Point(3, 0);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(171, 25);
-            this.textBox4.TabIndex = 0;
+            this.XBias.Location = new System.Drawing.Point(3, 0);
+            this.XBias.Name = "XBias";
+            this.XBias.Size = new System.Drawing.Size(171, 25);
+            this.XBias.TabIndex = 0;
             // 
             // panel5
             // 
@@ -470,7 +474,7 @@
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.textBox5);
+            this.splitContainer5.Panel2.Controls.Add(this.YBias);
             this.splitContainer5.Size = new System.Drawing.Size(337, 28);
             this.splitContainer5.SplitterDistance = 126;
             this.splitContainer5.TabIndex = 0;
@@ -484,12 +488,12 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Y轴偏移";
             // 
-            // textBox5
+            // YBias
             // 
-            this.textBox5.Location = new System.Drawing.Point(3, 0);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(171, 25);
-            this.textBox5.TabIndex = 0;
+            this.YBias.Location = new System.Drawing.Point(3, 0);
+            this.YBias.Name = "YBias";
+            this.YBias.Size = new System.Drawing.Size(171, 25);
+            this.YBias.TabIndex = 0;
             // 
             // panel6
             // 
@@ -512,7 +516,7 @@
             // 
             // splitContainer6.Panel2
             // 
-            this.splitContainer6.Panel2.Controls.Add(this.textBox6);
+            this.splitContainer6.Panel2.Controls.Add(this.HorizontalAngle);
             this.splitContainer6.Size = new System.Drawing.Size(337, 28);
             this.splitContainer6.SplitterDistance = 126;
             this.splitContainer6.TabIndex = 0;
@@ -526,12 +530,12 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "水平倾角";
             // 
-            // textBox6
+            // HorizontalAngle
             // 
-            this.textBox6.Location = new System.Drawing.Point(3, 0);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(171, 25);
-            this.textBox6.TabIndex = 0;
+            this.HorizontalAngle.Location = new System.Drawing.Point(3, 0);
+            this.HorizontalAngle.Name = "HorizontalAngle";
+            this.HorizontalAngle.Size = new System.Drawing.Size(171, 25);
+            this.HorizontalAngle.TabIndex = 0;
             // 
             // panel7
             // 
@@ -554,7 +558,7 @@
             // 
             // splitContainer7.Panel2
             // 
-            this.splitContainer7.Panel2.Controls.Add(this.textBox7);
+            this.splitContainer7.Panel2.Controls.Add(this.VerticalAngle);
             this.splitContainer7.Size = new System.Drawing.Size(337, 28);
             this.splitContainer7.SplitterDistance = 126;
             this.splitContainer7.TabIndex = 0;
@@ -568,12 +572,23 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "垂直倾角";
             // 
-            // textBox7
+            // VerticalAngle
             // 
-            this.textBox7.Location = new System.Drawing.Point(3, 0);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(171, 25);
-            this.textBox7.TabIndex = 0;
+            this.VerticalAngle.Location = new System.Drawing.Point(3, 0);
+            this.VerticalAngle.Name = "VerticalAngle";
+            this.VerticalAngle.Size = new System.Drawing.Size(171, 25);
+            this.VerticalAngle.TabIndex = 0;
+            // 
+            // Calibrate
+            // 
+            this.Calibrate.Enabled = false;
+            this.Calibrate.Location = new System.Drawing.Point(15, 75);
+            this.Calibrate.Name = "Calibrate";
+            this.Calibrate.Size = new System.Drawing.Size(93, 34);
+            this.Calibrate.TabIndex = 3;
+            this.Calibrate.Text = "启动校准";
+            this.Calibrate.UseVisualStyleBackColor = true;
+            this.Calibrate.Click += new System.EventHandler(this.Calibrate_Click);
             // 
             // PowerModeLabel
             // 
@@ -596,7 +611,7 @@
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(15, 113);
+            this.BackBtn.Location = new System.Drawing.Point(15, 144);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(93, 36);
             this.BackBtn.TabIndex = 0;
@@ -618,7 +633,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.pictureBox1);
+            this.tabPage1.Controls.Add(this.Pic2D);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -627,9 +642,20 @@
             this.tabPage1.Text = "二维能量分布图像";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // Pic2D
+            // 
+            this.Pic2D.BackColor = System.Drawing.Color.Black;
+            this.Pic2D.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pic2D.Location = new System.Drawing.Point(3, 3);
+            this.Pic2D.Name = "Pic2D";
+            this.Pic2D.Size = new System.Drawing.Size(511, 309);
+            this.Pic2D.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pic2D.TabIndex = 0;
+            this.Pic2D.TabStop = false;
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.openGLControl1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -637,6 +663,19 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "三维能量分布图像";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // openGLControl1
+            // 
+            this.openGLControl1.BackColor = System.Drawing.Color.Black;
+            this.openGLControl1.DrawFPS = false;
+            this.openGLControl1.Location = new System.Drawing.Point(3, 3);
+            this.openGLControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.openGLControl1.Name = "openGLControl1";
+            this.openGLControl1.OpenGLVersion = SharpGL.Version.OpenGLVersion.OpenGL2_1;
+            this.openGLControl1.RenderContextType = SharpGL.RenderContextType.DIBSection;
+            this.openGLControl1.RenderTrigger = SharpGL.RenderTrigger.TimerBased;
+            this.openGLControl1.Size = new System.Drawing.Size(510, 309);
+            this.openGLControl1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -657,28 +696,6 @@
             this.tabPage4.Text = "Y轴能量分布图";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(511, 309);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(511, 309);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Black;
@@ -689,6 +706,10 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
+            // 
+            // UpDateTask
+            // 
+            this.UpDateTask.Tick += new System.EventHandler(this.UpDateTask_Tick);
             // 
             // MainWindow
             // 
@@ -771,10 +792,10 @@
             this.splitContainer7.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pic2D)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.openGLControl1)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
@@ -792,35 +813,35 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.SplitContainer splitContainer8;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox XWidth;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox YWidth;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox XCoord;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox YCoord;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox XBias;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox YBias;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox HorizontalAngle;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox VerticalAngle;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -830,8 +851,10 @@
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.Label PowerModeLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox Pic2D;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button Calibrate;
+        private SharpGL.OpenGLControl openGLControl1;
+        private System.Windows.Forms.Timer UpDateTask;
     }
 }

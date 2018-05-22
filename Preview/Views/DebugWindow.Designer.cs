@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ShiftImg = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AngleImg = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -56,11 +56,12 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ShiftImg)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AngleImg)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -77,17 +78,17 @@
             this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // ShiftImg
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlText;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 21);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(649, 387);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.ShiftImg.BackColor = System.Drawing.SystemColors.ControlText;
+            this.ShiftImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ShiftImg.Location = new System.Drawing.Point(3, 21);
+            this.ShiftImg.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.ShiftImg.Name = "ShiftImg";
+            this.ShiftImg.Size = new System.Drawing.Size(649, 387);
+            this.ShiftImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ShiftImg.TabIndex = 3;
+            this.ShiftImg.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -118,7 +119,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.pictureBox1);
+            this.groupBox4.Controls.Add(this.AngleImg);
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(657, 411);
@@ -126,17 +127,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "角度图像";
             // 
-            // pictureBox1
+            // AngleImg
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlText;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(651, 387);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.AngleImg.BackColor = System.Drawing.SystemColors.ControlText;
+            this.AngleImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AngleImg.Location = new System.Drawing.Point(3, 21);
+            this.AngleImg.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.AngleImg.Name = "AngleImg";
+            this.AngleImg.Size = new System.Drawing.Size(651, 387);
+            this.AngleImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AngleImg.TabIndex = 5;
+            this.AngleImg.TabStop = false;
             // 
             // panel1
             // 
@@ -148,7 +149,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.pictureBox2);
+            this.groupBox5.Controls.Add(this.ShiftImg);
             this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(655, 411);
@@ -167,6 +168,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.Back);
             this.splitContainer1.Size = new System.Drawing.Size(662, 282);
             this.splitContainer1.SplitterDistance = 369;
@@ -262,6 +264,7 @@
             this.StopMoveButton.TabIndex = 49;
             this.StopMoveButton.Text = "停止";
             this.StopMoveButton.UseVisualStyleBackColor = true;
+            this.StopMoveButton.Click += new System.EventHandler(this.StopMoveButton_Click);
             // 
             // Angle
             // 
@@ -306,6 +309,7 @@
             this.rAxis.TabStop = true;
             this.rAxis.Text = "R";
             this.rAxis.UseVisualStyleBackColor = true;
+            this.rAxis.CheckedChanged += new System.EventHandler(this.rAxis_CheckedChanged);
             // 
             // zAxis
             // 
@@ -318,6 +322,7 @@
             this.zAxis.TabStop = true;
             this.zAxis.Text = "Z";
             this.zAxis.UseVisualStyleBackColor = true;
+            this.zAxis.CheckedChanged += new System.EventHandler(this.zAxis_CheckedChanged);
             // 
             // yAxis
             // 
@@ -330,6 +335,7 @@
             this.yAxis.TabStop = true;
             this.yAxis.Text = "Y";
             this.yAxis.UseVisualStyleBackColor = true;
+            this.yAxis.CheckedChanged += new System.EventHandler(this.yAxis_CheckedChanged);
             // 
             // xAxis
             // 
@@ -343,6 +349,7 @@
             this.xAxis.TabStop = true;
             this.xAxis.Text = "X";
             this.xAxis.UseVisualStyleBackColor = true;
+            this.xAxis.CheckedChanged += new System.EventHandler(this.xAxis_CheckedChanged);
             // 
             // Back
             // 
@@ -388,6 +395,16 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "摄像机2参数";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(4, 38);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 51);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "指示激光：关";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // DebugWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -396,11 +413,11 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DebugWindow";
             this.Text = "DebugWindow";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShiftImg)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AngleImg)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -425,7 +442,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox ShiftImg;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
@@ -449,9 +466,10 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox AngleImg;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button3;
     }
 }

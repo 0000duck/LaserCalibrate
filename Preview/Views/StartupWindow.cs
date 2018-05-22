@@ -12,13 +12,18 @@ namespace Preview
 {
     public partial class StartupWindow : Form
     {
+        private ControlClass _controlClass;
+
         public StartupWindow()
         {
             InitializeComponent();
+            _controlClass=ControlClass.GetInstance();
+            _controlClass.Relay1.TurnOn();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
+            _controlClass.Relay1.TurnOff();
             Close();
         }
 
