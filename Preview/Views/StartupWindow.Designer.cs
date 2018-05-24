@@ -35,6 +35,7 @@
             this.PowerModeBtn = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.btn_panel = new System.Windows.Forms.Panel();
+            this.PowerSwitch = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Replay = new System.Windows.Forms.Button();
             this.logo_panel.SuspendLayout();
@@ -102,12 +103,23 @@
             // 
             // btn_panel
             // 
+            this.btn_panel.Controls.Add(this.PowerSwitch);
             this.btn_panel.Controls.Add(this.flowLayoutPanel1);
             this.btn_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_panel.Location = new System.Drawing.Point(0, 313);
             this.btn_panel.Name = "btn_panel";
             this.btn_panel.Size = new System.Drawing.Size(1348, 408);
             this.btn_panel.TabIndex = 4;
+            // 
+            // PowerSwitch
+            // 
+            this.PowerSwitch.Location = new System.Drawing.Point(365, 85);
+            this.PowerSwitch.Name = "PowerSwitch";
+            this.PowerSwitch.Size = new System.Drawing.Size(125, 46);
+            this.PowerSwitch.TabIndex = 5;
+            this.PowerSwitch.Text = "button1";
+            this.PowerSwitch.UseVisualStyleBackColor = true;
+            this.PowerSwitch.Click += new System.EventHandler(this.Power_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -160,5 +172,6 @@
         private System.Windows.Forms.Panel btn_panel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Button Replay;
+        private System.Windows.Forms.Button PowerSwitch;
     }
 }

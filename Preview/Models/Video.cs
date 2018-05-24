@@ -4,7 +4,6 @@ using System.Threading;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using static Preview.CHCNetSDK;
 
 
 
@@ -90,18 +89,33 @@ namespace Preview
         /// </summary>
         public void CaptureBmp()
         {
-
+            //TODO：当前存在严重的性能与稳定性的问题，需重构
+            if (PreviewImage[0] != null)
+            {
+                PreviewImage[0].Dispose();
+                
+            }
+            if (PreviewImage[1] != null)
+            {
+                PreviewImage[1].Dispose();
+            }
             const string leftImgName = "Left.bmp";
             const string rightImgName = "Right.bmp";
-
-            if (!NET_DVR_CapturePicture(CamLeft.RealPlayHandle, leftImgName) && !NET_DVR_CapturePicture(CamRight.RealPlayHandle, rightImgName))
+            //if (File.Exists(leftImgName))
+            //{
+            //    File.Delete("./"+leftImgName);
+            //    File.Delete("./"+rightImgName);
+            //}
+            bool flag = true;
+            flag&=CHCNetSDK.NET_DVR_CapturePicture(CamLeft.RealPlayHandle, leftImgName); 
+            flag&=CHCNetSDK.NET_DVR_CapturePicture(CamRight.RealPlayHandle, rightImgName);
+            if(!flag)
             {
-                var iLastErr = NET_DVR_GetLastError();
+                var iLastErr = CHCNetSDK.NET_DVR_GetLastError();
                 throw new Exception("NET_DVR_CapturePicture failed, error code= " + iLastErr);
             }
-
-            PreviewImage[0] = new Bitmap(leftImgName);
-            PreviewImage[1] = new Bitmap(rightImgName);
+            PreviewImage[0] = new Bitmap("Left.bmp");
+            PreviewImage[1] = new Bitmap("Right.bmp");
             
 
         }
@@ -112,10 +126,12 @@ namespace Preview
         
         public void DrawImage(int a, int b, int c, int d)
         {
+            //TODO：重写实现
             int x0 = a * _shiftPictureBox.Width / 1920;
             int y0 = b * _shiftPictureBox.Height / 1080;
             int x1 = c * _shiftPictureBox.Width / 1920;
             int y1 = d * _shiftPictureBox.Height / 1080;
+            
             Pen pen_base = new Pen(Color.Chartreuse, 1);
             Pen pen_now = new Pen(Color.Black, 1);
             //Point[]的参数还可以调，根据窗口大小
@@ -136,7 +152,7 @@ namespace Preview
                 new Point(x1, 0),
                 new Point(x1,_shiftPictureBox.Height),
             };
-
+            grfxA.GetContextInfo();
 
             grfxA.DrawLines(pen_base, points1);
 
@@ -153,7 +169,7 @@ namespace Preview
             CamRight.StopPreview();
             CamRight.Logout();
 
-            NET_DVR_Cleanup();
+            CHCNetSDK.NET_DVR_Cleanup();
         }
 
     }
@@ -179,10 +195,10 @@ namespace Preview
 
         public IntPtr User;
         public int RealPlayHandle;
-        public REALDATACALLBACK RealData=null;
+        public CHCNetSDK.REALDATACALLBACK RealData = null;
 
-        public NET_DVR_DEVICEINFO_V30 DeviceInfo;
-        private NET_DVR_PREVIEWINFO _lpPreviewInfo;
+        public CHCNetSDK.NET_DVR_DEVICEINFO_V30 DeviceInfo;
+        private CHCNetSDK.NET_DVR_PREVIEWINFO _lpPreviewInfo;
 
         public IntPtr CamHandle;
         public int UserId;
@@ -194,7 +210,7 @@ namespace Preview
             DvrUserName = userName;
             DvrPassword = password;
 
-            DeviceInfo=new NET_DVR_DEVICEINFO_V30();
+            DeviceInfo = new CHCNetSDK.NET_DVR_DEVICEINFO_V30();
             User = new IntPtr();
 
         }
@@ -205,12 +221,12 @@ namespace Preview
         /// <returns>是否成功</returns>
         public bool Login()
         {
-            UserId= NET_DVR_Login_V30(DvripAddress, DvrPortNumber, DvrUserName, DvrPassword, ref DeviceInfo);
+            UserId = CHCNetSDK.NET_DVR_Login_V30(DvripAddress, DvrPortNumber, DvrUserName, DvrPassword, ref DeviceInfo);
             if (UserId < 0)
             {
 
                 //throw new Exception("登录失败");
-                var iLastErr = NET_DVR_GetLastError();
+                var iLastErr = CHCNetSDK.NET_DVR_GetLastError();
                 throw new Exception("NET_DVR_CapturePicture failed, error code= " + iLastErr);
 
                 return false;
@@ -230,7 +246,7 @@ namespace Preview
         {
             if (UserId >= 0)
             {
-                NET_DVR_Logout(UserId);
+                CHCNetSDK.NET_DVR_Logout(UserId);
             }
         }
 
@@ -240,6 +256,7 @@ namespace Preview
         /// <param name="realPlayWndHandle">播放所使用的picbox的句柄</param>
         public void StartPreview(IntPtr realPlayWndHandle)
         {
+            //TODO:建议重构，以实现实时解码获取图像的功能
             if (UserId < 0)
             {
                 throw new Exception("Please login the device firstly");
@@ -258,14 +275,14 @@ namespace Preview
                 RealData = RealDataCallBack;//预览实时流回调函数
             }
 
-            RealPlayHandle = NET_DVR_RealPlay_V40(UserId, ref previewInfo, null, User);
+            RealPlayHandle = CHCNetSDK.NET_DVR_RealPlay_V40(UserId, ref previewInfo, null, User);
 
         }
 
         public void StopPreview()
         {
             if(RealPlayHandle>=0)
-                NET_DVR_StopRealPlay(RealPlayHandle);
+                CHCNetSDK.NET_DVR_StopRealPlay(RealPlayHandle);
         }
         /// <summary>
         /// 视频回调解码，暂时没有用到，可以参考手册实现
@@ -285,7 +302,7 @@ namespace Preview
         /// </summary>
         public void Playback(uint startYear, uint startMonth, uint startDay, uint startHour, uint startMinute, uint startSecond, uint endYear, uint endMonth, uint endDay, uint endHour, uint endMinute, uint endSecond)
         {
-            NET_DVR_PLAYCOND struDownloadCond = new NET_DVR_PLAYCOND();
+            CHCNetSDK.NET_DVR_PLAYCOND struDownloadCond = new CHCNetSDK.NET_DVR_PLAYCOND();
             struDownloadCond.dwChannel = 1;
 
             struDownloadCond.struStartTime.dwYear = startYear;
@@ -301,12 +318,12 @@ namespace Preview
             struDownloadCond.struStopTime.dwMinute = endMinute;
             struDownloadCond.struStopTime.dwSecond = endSecond;
 
-            int hPlayback = NET_DVR_GetFileByTime_V40(UserId, "./test.mp4", ref struDownloadCond);
+            int hPlayback = CHCNetSDK.NET_DVR_GetFileByTime_V40(UserId, "./test.mp4", ref struDownloadCond);
             if (hPlayback < 0)
             {
-                Console.WriteLine("NET_DVR_GetFileByTime_V40 fail,last error %d\n", NET_DVR_GetLastError());
-                NET_DVR_Logout(UserId);
-                NET_DVR_Cleanup();
+                Console.WriteLine("NET_DVR_GetFileByTime_V40 fail,last error %d\n", CHCNetSDK.NET_DVR_GetLastError());
+                CHCNetSDK.NET_DVR_Logout(UserId);
+                CHCNetSDK.NET_DVR_Cleanup();
                 return;
             }
 
@@ -314,32 +331,32 @@ namespace Preview
             IntPtr lpInBuffer = new IntPtr();
             IntPtr lpOutBuffer = new IntPtr();
 
-            if (!NET_DVR_PlayBackControl_V40(hPlayback, NET_DVR_PLAYSTART, lpInBuffer, 0, lpOutBuffer, ref lpOutValue))
+            if (!CHCNetSDK.NET_DVR_PlayBackControl_V40(hPlayback, CHCNetSDK.NET_DVR_PLAYSTART, lpInBuffer, 0, lpOutBuffer, ref lpOutValue))
             {
 
-                NET_DVR_Logout(UserId);
-                NET_DVR_Cleanup();
+                CHCNetSDK.NET_DVR_Logout(UserId);
+                CHCNetSDK.NET_DVR_Cleanup();
                 return;
             }
 
             int nPos = 0;
-            for (nPos = 0; nPos < 100 && nPos >= 0; nPos = NET_DVR_GetDownloadPos(hPlayback))
+            for (nPos = 0; nPos < 100 && nPos >= 0; nPos = CHCNetSDK.NET_DVR_GetDownloadPos(hPlayback))
             {
                 Console.WriteLine("Be downloading... %d %%\n", nPos);
                 Thread.Sleep(5000);  //millisecond
             }
-            if (!NET_DVR_StopGetFile(hPlayback))
+            if (!CHCNetSDK.NET_DVR_StopGetFile(hPlayback))
             {
-                Console.WriteLine("failed to stop get file [%d]\n", NET_DVR_GetLastError());
-                NET_DVR_Logout(UserId);
-                NET_DVR_Cleanup();
+                Console.WriteLine("failed to stop get file [%d]\n", CHCNetSDK.NET_DVR_GetLastError());
+                CHCNetSDK.NET_DVR_Logout(UserId);
+                CHCNetSDK.NET_DVR_Cleanup();
                 return;
             }
             if (nPos < 0 || nPos > 100)
             {
-                Console.WriteLine("download err [%d]\n", NET_DVR_GetLastError());
-                NET_DVR_Logout(UserId);
-                NET_DVR_Cleanup();
+                Console.WriteLine("download err [%d]\n", CHCNetSDK.NET_DVR_GetLastError());
+                CHCNetSDK.NET_DVR_Logout(UserId);
+                CHCNetSDK.NET_DVR_Cleanup();
                 return;
             }
             Console.WriteLine("Be downloading... %d %%\n", nPos);

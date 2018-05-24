@@ -83,7 +83,7 @@ namespace Preview
             //TODO:更新3D数据图
             //图像在img.GrayBitmap
             heightMap = new Image<Gray, Byte>(img.GrayBitmap);
-            colormat  = new Image<Rgb, Byte>(img.ColorMap);
+            colormat  = new Image<Bgr, Byte>(img.ColorMap);
         }
 
         // --- Fields ---
@@ -93,7 +93,7 @@ namespace Preview
         private const float HEIGHT_RATIO = 1.5f;                                // Ratio That The Y Is Scaled According To The X And Z (NEW)
         private static bool bRender = true;                                     // Polygon Flag Set To TRUE By Default (NEW)
         private static Image<Gray, Byte> heightMap;                             // Holds The Height Map Data (NEW)
-        private static Image<Rgb, Byte> colormat;
+        private static Image<Bgr, Byte> colormat;
         private static float scaleValue = 0.15f;                                // Scale Value For The Terrain (NEW)
         public float view_x = 0.0f;
         public float view_y = 0.0f;
@@ -173,53 +173,7 @@ namespace Preview
 
             gl.Hint(OpenGL.GL_PERSPECTIVE_CORRECTION_HINT, OpenGL.GLU_DISPLAY_MODE);
 
-            LoadRawFile("light.bmp");//灰度文件在Debug/Data文件夹下
             //CvInvoke.ApplyColorMap(heightMap, colormat, Emgu.CV.CvEnum.ColorMapType.Jet);
-        }
-
-        private static bool LoadRawFile(string name)
-        {
-            if (name == null || name == string.Empty)
-            {                          // Make Sure A Filename Was Given
-                return false;                                                   // If Not Return false
-            }
-
-            string fileName1 = string.Format("Data{0}{1}",                      // Look For Data\Filename
-                Path.DirectorySeparatorChar, name);
-            string fileName2 = string.Format("{0}{1}{0}{1}Data{1}{2}",          // Look For ..\..\Data\Filename
-                "..", Path.DirectorySeparatorChar, name);
-
-            // Make Sure The File Exists In One Of The Usual Directories
-            if (!File.Exists(name) && !File.Exists(fileName1) && !File.Exists(fileName2))
-            {
-                MessageBox.Show("Can't Find The Height Map!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return false;                                                   // File Could Not Be Found
-            }
-
-            if (File.Exists(fileName1))
-            {                                        // Does The File Exist Here?
-                name = fileName1;                                               // Set To Correct File Path
-            }
-            else if (File.Exists(fileName2))
-            {                                   // Does The File Exist Here?
-                name = fileName2;                                               // Set To Correct File Path
-            }
-
-            // Open The File In Read / Binary Mode
-            Image<Rgb, Byte> mp = new Image<Rgb, byte>(name);
-            heightMap = mp.Convert<Gray, Byte>();
-
-            colormat = new Image<Rgb, Byte>(heightMap.Size);
-
-
-
-            Image<Gray, Byte> graymat = new Image<Gray, Byte>(heightMap.Size);
-            CvInvoke.Blur(heightMap, heightMap, new Size(15, 15), new Point(-1, -1));
-
-            CvInvoke.Threshold(heightMap, graymat, 90, 300, ThresholdType.ToZero);
-
-            CvInvoke.ApplyColorMap(graymat, colormat, Emgu.CV.CvEnum.ColorMapType.Jet);
-            return true;                                                        // Found And Loaded Data In File
         }
 
 
@@ -291,7 +245,7 @@ namespace Preview
         }
 
 
-        private void SetVertexColor(ref Image<Rgb, Byte> colormat, int x, int y)
+        private void SetVertexColor(ref Image<Bgr, Byte> colormat, int x, int y)
         {
 
             OpenGL gl = openGLControl1.OpenGL;

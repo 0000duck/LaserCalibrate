@@ -18,16 +18,14 @@ namespace Preview
         private ControlClass _control;
         private bool relaySwitch = false;
         private int axis=0;
-        private Timer updateTimer;
         public DebugWindow()
         {
             InitializeComponent();
             _control=ControlClass.GetInstance();
             _control.StartPreview(AngleImg,ShiftImg);
-            updateTimer=new Timer();
             updateTimer.Interval = (40);
-            updateTimer.Elapsed += (o,e) => _control.drawCross();
-            updateTimer.Start();
+            updateTimer.Tick+= (o,e) => _control.drawCross();
+
         }
 
         private void StartMove_Click(object sender, EventArgs e)
@@ -110,5 +108,10 @@ namespace Preview
             
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //updateTimer.Start();
+            _control.drawCross();
+        }
     }
 }

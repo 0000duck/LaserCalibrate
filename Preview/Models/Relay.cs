@@ -74,5 +74,7 @@ namespace Preview
                 _comm.Close();
         }
 
+        ~Relay() => CloseSerialPort();
+
     }
 }

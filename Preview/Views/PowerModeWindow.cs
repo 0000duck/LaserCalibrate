@@ -34,7 +34,9 @@ namespace Preview
 
         private void Start(PowerMode mode)
         {
-            Application.Run(new MainWindow(mode,this));
+            var mainWindow = new MainWindow(mode, this);
+            mainWindow.Show();
+            mainWindow.Closed += (o,e)=>this.Show();
             this.Hide();
         }
     }

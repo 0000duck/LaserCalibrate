@@ -46,8 +46,10 @@ namespace Preview
             uint parity = (uint)reader.GetValue("Parity", typeof(uint));
             uint stopBits = (uint)reader.GetValue("StopBits", typeof(uint));
             uint motorCOMID = uint.Parse((string)reader.GetValue("COMID", typeof(string)));
+            
 
             motorController = new MotorController(baudRate, byteSize, parity, stopBits, motorCOMID);
+            motorController.OpenCom();
             //初始化摄像头
             DvrLoginInfo leftLoginInfo = new DvrLoginInfo()
             {
@@ -66,6 +68,7 @@ namespace Preview
             };
             
             videoCap=new VideoCapture(leftLoginInfo,rightDvrLoginInfo);
+            videoCap.Login();
             //中心坐标
             int x = (int) reader.GetValue("X", typeof(int));
             int y = (int) reader.GetValue("Y", typeof(int));
@@ -113,13 +116,10 @@ namespace Preview
 
             //TODO:控制电机运动
             //debug info
-            Console.WriteLine($"θ1：{imageX.Delta_Theta1}," +
-                              $"φ1：{imageX.Delta_Fai1}," +
-                              $"θ2：{imageX.Delta_Theta2}," +
-                              $"φ2：{imageX.Delta_Fai2}");
-            
+            motorController.AxisMove(new float[] { (float)imageX.Delta_Theta1, (float)imageX.Delta_Fai1, (float)imageX.Delta_Theta2, (float)imageX.Delta_Fai2 });
             //motorController.AxisMove(new float[]{});
         }
+
         
 
     }

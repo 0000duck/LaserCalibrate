@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ShiftImg = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,11 +53,13 @@
             this.zAxis = new System.Windows.Forms.RadioButton();
             this.yAxis = new System.Windows.Forms.RadioButton();
             this.xAxis = new System.Windows.Forms.RadioButton();
+            this.button3 = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShiftImg)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -168,6 +171,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button4);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.Back);
             this.splitContainer1.Size = new System.Drawing.Size(662, 282);
@@ -351,6 +355,16 @@
             this.xAxis.UseVisualStyleBackColor = true;
             this.xAxis.CheckedChanged += new System.EventHandler(this.xAxis_CheckedChanged);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(4, 38);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 51);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "指示激光：关";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Back
             // 
             this.Back.Location = new System.Drawing.Point(3, 115);
@@ -395,15 +409,19 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "摄像机2参数";
             // 
-            // button3
+            // updateTimer
             // 
-            this.button3.Location = new System.Drawing.Point(4, 38);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 51);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "指示激光：关";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.updateTimer.Interval = 40;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(4, 204);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "绘制十字";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // DebugWindow
             // 
@@ -471,5 +489,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Timer updateTimer;
+        private System.Windows.Forms.Button button4;
     }
 }
