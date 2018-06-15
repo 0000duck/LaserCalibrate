@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Preview.Views;
 
 namespace Preview
 {
@@ -58,6 +59,14 @@ namespace Preview
                 _controlClass.Relay1.TurnOn();
             }
             PowerSwitch.Text = _controlClass.Relay1.IsOpen ? "电源：开" : "电源:关";
+        }
+
+        private void Replay_Click(object sender, EventArgs e)
+        {
+            var playBackWindow = new PlayBack();
+            playBackWindow.Closed += (o, args) => this.Show();
+            playBackWindow.Show();
+            this.Hide();
         }
     }
 }

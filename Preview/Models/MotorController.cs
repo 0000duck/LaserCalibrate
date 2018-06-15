@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Timers;
 using cszmcaux;
 
 namespace Preview
@@ -26,7 +27,48 @@ namespace Preview
         private readonly uint Stramp = 0;
 
         private float PulsePerAngle { get; set; } //单位度/脉冲
+        private float x, y, z, r;
 
+        private Timer checkTimer;//定时限位检查
+
+        /// <summary>
+        /// 获取坐标，X， Y， Z，R
+        /// </summary>
+        #region axisvalue
+        public float X
+        {
+            get
+            {
+                zmcaux.ZAux_Direct_GetDpos(GHandle, 0, ref x);
+                return x;
+            }
+        }
+
+        public float Y
+        {
+            get
+            {
+                zmcaux.ZAux_Direct_GetDpos(GHandle, 1, ref y);
+                return y;
+            }
+        }
+        public float Z
+        {
+            get
+            {
+                zmcaux.ZAux_Direct_GetDpos(GHandle, 2, ref z);
+                return z;
+            }
+        }
+        public float R
+        {
+            get
+            {
+                zmcaux.ZAux_Direct_GetDpos(GHandle, 3, ref r);
+                return r;
+            }
+        }
+        #endregion
         /// <summary>
         /// 构造函数，将属性设为默认值
         /// </summary>
@@ -49,9 +91,15 @@ namespace Preview
                 zmcaux.ZAux_Direct_SetAccel(this.GHandle, i, this.Acceleration);
                 zmcaux.ZAux_Direct_SetDecel(this.GHandle, i, this.Deceleration);
                 zmcaux.ZAux_Direct_SetSramp(this.GHandle, i, this.Stramp);
-
             }
+            
+            OpenCom();
+            //每10ms检查限位
+            checkTimer = new Timer(10);
+            checkTimer.Elapsed += (o, e) => CheckStatus();
+
         }
+
 
         /// <summary>
         /// 链接控制器,并将类中的属性设为函数的参数
@@ -76,20 +124,19 @@ namespace Preview
         /// </summary>
         /// <param name="angleList">提供四个Float类型的参数，四个参数与四个轴对应顺序为x,y,z,r</param>
         /// <returns>成功转动返回True，否则返回False</returns>
-        public void AxisMove(float[] angleList)
+        public void AxisMove(float x, float y, float z, float r)
         {
-
+            //TODO:确认转动角度是否同预期
             if (this.GHandle == IntPtr.Zero)
             {
                 throw new ControllerException();
             }
             //设置轴参数并转动
-            for (int i = 0; i < 4; i++)
-            {
 
-                zmcaux.ZAux_Direct_Singl_Move(GHandle, i, angleList[i] * PulsePerAngle);
-
-            }
+            zmcaux.ZAux_Direct_Singl_Move(GHandle, 0, x * PulsePerAngle);
+            zmcaux.ZAux_Direct_Singl_Move(GHandle, 1, y * PulsePerAngle);
+            zmcaux.ZAux_Direct_Singl_Move(GHandle, 2, z * PulsePerAngle);
+            zmcaux.ZAux_Direct_Singl_Move(GHandle, 3, r * PulsePerAngle);
         }
 
         /// <summary>
@@ -100,6 +147,7 @@ namespace Preview
         /// <returns></returns>
         public bool SingleAxisMove(int axisID, float angle)
         {
+            //TODO:确认转动角度是否同预期
             if (this.GHandle == IntPtr.Zero)
             {
                 return false;
@@ -126,6 +174,33 @@ namespace Preview
         }
 
         /// <summary>
+        /// 检查是否达到限位位置
+        /// </summary>
+        public void CheckStatus()
+        {
+            uint[] iostate = new uint[4];
+            int axisstate = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                zmcaux.ZAux_Direct_GetIn(GHandle, i, ref iostate[i]);
+            }
+            zmcaux.ZAux_Direct_GetAxisStatus(GHandle, 0, ref axisstate);
+
+            if (axisstate == 0)
+            {
+                return;
+            }
+            else
+            {
+                if (((axisstate >> 4) & 1) == 1 || ((axisstate >> 5) & 1) == 1 || ((axisstate >> 22) & 1) == 1)
+                {
+                    throw new ControllerException();
+                }
+            }
+        }
+
+        /// <summary>
         /// 断开链接
         /// </summary>
         public void CloseCom()
@@ -135,16 +210,17 @@ namespace Preview
         }
 
         ~MotorController() => CloseCom();
-    
+
     }
 
+    //控制器异常
     public class ControllerException : Exception
     {
-        public ControllerException():base()
+
+        public ControllerException()
         {
-            
+
         }
     }
-
 }
 

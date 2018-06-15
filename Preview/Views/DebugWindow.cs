@@ -24,7 +24,7 @@ namespace Preview
             _control=ControlClass.GetInstance();
             _control.StartPreview(AngleImg,ShiftImg);
             updateTimer.Interval = (40);
-            updateTimer.Tick+= (o,e) => _control.drawCross();
+            updateTimer.Tick+= (o,e) => _control.DrawCross();
 
         }
 
@@ -108,10 +108,5 @@ namespace Preview
             
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //updateTimer.Start();
-            _control.drawCross();
-        }
     }
 }

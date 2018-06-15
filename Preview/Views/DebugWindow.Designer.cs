@@ -53,13 +53,13 @@
             this.zAxis = new System.Windows.Forms.RadioButton();
             this.yAxis = new System.Windows.Forms.RadioButton();
             this.xAxis = new System.Windows.Forms.RadioButton();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShiftImg)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -355,6 +355,15 @@
             this.xAxis.UseVisualStyleBackColor = true;
             this.xAxis.CheckedChanged += new System.EventHandler(this.xAxis_CheckedChanged);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(4, 204);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "绘制十字";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(4, 38);
@@ -408,20 +417,6 @@
             this.label5.Size = new System.Drawing.Size(90, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "摄像机2参数";
-            // 
-            // updateTimer
-            // 
-            this.updateTimer.Interval = 40;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(4, 204);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "绘制十字";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // DebugWindow
             // 

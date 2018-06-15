@@ -7,6 +7,7 @@ using Emgu.CV.CvEnum;
 //fileread
 using System.IO;
 using OpenTK.Graphics.ES11;
+using ZedGraph;
 
 //sharpgl
 using SharpGL;
@@ -18,6 +19,9 @@ namespace Preview
         private Form _lastForm;
         private PowerMode _mode;
         private ControlClass _control;
+        private ImageX img;
+       
+
         public MainWindow(PowerMode mode,Form powerModeWindow)
         {
             InitializeComponent();
@@ -36,6 +40,8 @@ namespace Preview
                     PowerModeLabel.Text = "工作模式：低功率"; break;
             }
             _control.StartPreview(AnglePicture,ShiftPicture);
+
+            img = _control.imageX;
             UpDateTask.Start();
         }
 
@@ -66,34 +72,42 @@ namespace Preview
         /// <param name="e"></param>
         private void UpDateTask_Tick(object sender, EventArgs e)
         {
-            var img = _control.imageX;
+
             //绘制十字并更新图像
-            _control.drawCross();
+            _control.DrawCross();
             //更新2D图
+
             Pic2D.Image = img.ColorMap;
+
             //更新数据列表
             XWidth.Text = img.BreadthX.ToString();
-            YWidth.Text = img.BreadthX.ToString();
+            YWidth.Text = img.BreadthY.ToString();
             XCoord.Text = img.ShapeCenterX.ToString();
             YCoord.Text = img.ShapeCenterY.ToString();
             XBias.Text = img.BiasX.ToString();
             YBias.Text = img.BiasY.ToString();
             HorizontalAngle.Text = img.AngleX.ToString();
             VerticalAngle.Text = img.AngleY.ToString();
-            //TODO:更新3D数据图
-            //图像在img.GrayBitmap
+
+
+            //更新能量分布图
             heightMap = new Image<Gray, Byte>(img.GrayBitmap);
-            colormat  = new Image<Bgr, Byte>(img.ColorMap);
+            colormat = new Image<Bgr, Byte>(img.ColorMap).Convert<Rgb, Byte>();
+
+
+            createPaneY(zedGraphControl2);
+
+            createPaneX(zedGraphControl1);
         }
 
         // --- Fields ---
         #region Private Static Fields
 
-        private const int STEP_SIZE = 5;                                       // Width And Height Of Each Quad (NEW)
+        private const int STEP_SIZE = 10;                                       // Width And Height Of Each Quad (NEW)
         private const float HEIGHT_RATIO = 1.5f;                                // Ratio That The Y Is Scaled According To The X And Z (NEW)
         private static bool bRender = true;                                     // Polygon Flag Set To TRUE By Default (NEW)
         private static Image<Gray, Byte> heightMap;                             // Holds The Height Map Data (NEW)
-        private static Image<Bgr, Byte> colormat;
+        private static Image<Rgb, Byte> colormat;
         private static float scaleValue = 0.15f;                                // Scale Value For The Terrain (NEW)
         public float view_x = 0.0f;
         public float view_y = 0.0f;
@@ -173,8 +187,10 @@ namespace Preview
 
             gl.Hint(OpenGL.GL_PERSPECTIVE_CORRECTION_HINT, OpenGL.GLU_DISPLAY_MODE);
 
+            //LoadRawFile("light.bmp");//灰度文件在Debug/Data文件夹下
             //CvInvoke.ApplyColorMap(heightMap, colormat, Emgu.CV.CvEnum.ColorMapType.Jet);
         }
+
 
 
         private void RenderHeightMap(ref Image<Gray, Byte> heightMap)
@@ -245,12 +261,12 @@ namespace Preview
         }
 
 
-        private void SetVertexColor(ref Image<Bgr, Byte> colormat, int x, int y)
+        private void SetVertexColor(ref Image<Rgb, Byte> colormat, int x, int y)
         {
 
             OpenGL gl = openGLControl1.OpenGL;
 
-            gl.Color(colormat.Data[x, y, 2], colormat.Data[x, y, 1], colormat.Data[x, y, 0]);
+            gl.Color(colormat.Data[x, y, 0], colormat.Data[x, y, 1], colormat.Data[x, y, 2]);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -291,6 +307,100 @@ namespace Preview
             }
             return base.ProcessCmdKey(ref msg, keyData);//返回所有键值
         }
+
+        private void openGLControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createPaneY(ZedGraphControl zed)
+        {
+            //var img = _control.imageX;
+            GraphPane myPane = zed.GraphPane;
+            myPane.Title.Text = "Y方向能量分布图";
+            myPane.XAxis.Title.Text = "Y";
+            myPane.YAxis.Title.Text = "E";
+
+            PointPairList list1 = new PointPairList();
+
+            for(int i=0;i<heightMap.Height;i++)
+            {
+                float x = i;
+                float y1 = heightMap.Data[i, (int)img.ShapeCenterX + heightMap.Width/2, 0];
+                list1.Add(x, y1);
+            }
+
+
+            LineItem myCurve = myPane.AddCurve("Enegy", list1, Color.Red, SymbolType.None);
+
+            myPane.Fill = new Fill(Color.White, Color.FromArgb(200, 200, 255), 45.0f);
+
+            String[] labels = new String[heightMap.Height];
+
+            for(int i=0;i<heightMap.Height;i++)
+            {
+                labels[i] = (i - heightMap.Height/2).ToString();
+            }
+
+            myPane.XAxis.Scale.TextLabels = labels;
+            myPane.XAxis.Type = AxisType.Text;
+
+            zed.AxisChange();
+
+            Refresh();
+
+            zed.GraphPane.CurveList.Clear();
+            //zed.GraphPane.GraphItemList.Clear();
+
+        }
+
+        private void createPaneX(ZedGraphControl zed)
+        {
+            //var img = _control.imageX;
+            GraphPane myPane = zed.GraphPane;
+            myPane.Title.Text = "X方向能量分布图";
+            myPane.XAxis.Title.Text = "X";
+            myPane.YAxis.Title.Text = "E";
+
+            PointPairList list1 = new PointPairList();
+
+            for (int i = 0; i < heightMap.Width; i++)
+            {
+                float x = i;
+                float y1 = heightMap.Data[(int)img.ShapeCenterY + heightMap.Height / 2, i, 0];
+                list1.Add(x, y1);
+            }
+
+
+            LineItem myCurve = myPane.AddCurve("Enegy", list1, Color.Red, SymbolType.None);
+
+            myPane.Fill = new Fill(Color.White, Color.FromArgb(200, 200, 255), 45.0f);
+
+            String[] labels = new String[heightMap.Width];
+
+            for (int i = 0; i < heightMap.Width; i++)
+            {
+                labels[i] = (i - heightMap.Width / 2).ToString();
+            }
+
+            myPane.XAxis.Scale.TextLabels = labels;
+            myPane.XAxis.Type = AxisType.Text;
+
+            zed.AxisChange();
+
+            zed.Refresh();
+
+            zed.GraphPane.CurveList.Clear();
+            //zed.GraphPane.GraphItemList.Clear();
+
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 
 }

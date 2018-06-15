@@ -117,7 +117,7 @@
             this.PowerSwitch.Name = "PowerSwitch";
             this.PowerSwitch.Size = new System.Drawing.Size(125, 46);
             this.PowerSwitch.TabIndex = 5;
-            this.PowerSwitch.Text = "button1";
+            this.PowerSwitch.Text = "电源开关";
             this.PowerSwitch.UseVisualStyleBackColor = true;
             this.PowerSwitch.Click += new System.EventHandler(this.Power_Click);
             // 
@@ -135,7 +135,6 @@
             // Replay
             // 
             this.Replay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Replay.Enabled = false;
             this.Replay.Location = new System.Drawing.Point(325, 10);
             this.Replay.Margin = new System.Windows.Forms.Padding(15, 10, 15, 10);
             this.Replay.Name = "Replay";
@@ -143,6 +142,7 @@
             this.Replay.TabIndex = 4;
             this.Replay.Text = "回放";
             this.Replay.UseVisualStyleBackColor = true;
+            this.Replay.Click += new System.EventHandler(this.Replay_Click);
             // 
             // StartupWindow
             // 

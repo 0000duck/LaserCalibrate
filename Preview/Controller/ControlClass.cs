@@ -49,22 +49,22 @@ namespace Preview
             
 
             motorController = new MotorController(baudRate, byteSize, parity, stopBits, motorCOMID);
-            motorController.OpenCom();
+            //motorController.OpenCom();
             //初始化摄像头
-            DvrLoginInfo leftLoginInfo = new DvrLoginInfo()
+            DVRLoginInfo leftLoginInfo = new DVRLoginInfo()
             {
-                DvripAddress = (string)reader.GetValue("LeftCamIP", typeof(string)),
-                DvrPortNumber = (short)reader.GetValue("LeftCamPort", typeof(short)),
-                DvrUserName = (string) reader.GetValue("LeftCamUsername",typeof(string)),
-                DvrPassword = (string)reader.GetValue("LeftCamPassword", typeof(string))
+                DVRIPAddress = (string)reader.GetValue("LeftCamIP", typeof(string)),
+                DVRPortNumber = (short)reader.GetValue("LeftCamPort", typeof(short)),
+                DVRUserName = (string) reader.GetValue("LeftCamUsername",typeof(string)),
+                DVRPassword = (string)reader.GetValue("LeftCamPassword", typeof(string))
             };
             
-            DvrLoginInfo rightDvrLoginInfo=new DvrLoginInfo()
+            DVRLoginInfo rightDvrLoginInfo=new DVRLoginInfo()
             {
-                DvripAddress = (string)reader.GetValue("RightCamIP", typeof(string)),
-                DvrPortNumber = (short)reader.GetValue("RightCamPort", typeof(short)),
-                DvrUserName = (string)reader.GetValue("RightCamUsername", typeof(string)),
-                DvrPassword = (string)reader.GetValue("RightCamPassword", typeof(string))
+                DVRIPAddress = (string)reader.GetValue("RightCamIP", typeof(string)),
+                DVRPortNumber = (short)reader.GetValue("RightCamPort", typeof(short)),
+                DVRUserName = (string)reader.GetValue("RightCamUsername", typeof(string)),
+                DVRPassword = (string)reader.GetValue("RightCamPassword", typeof(string))
             };
             
             videoCap=new VideoCapture(leftLoginInfo,rightDvrLoginInfo);
@@ -78,7 +78,7 @@ namespace Preview
         public void StartPreview(PictureBox leftPictureBox,PictureBox rightPictureBox)
         {
             videoCap.StartPreview(leftPictureBox,rightPictureBox);
-            videoCap.CaptureBmp();
+            videoCap.CaptureBMPpreview();
             imageX=new ImageX(videoCap.PreviewImage[0],
                 videoCap.PreviewImage[1],
                 center);
@@ -89,14 +89,16 @@ namespace Preview
         /// 更新图像
         /// 在窗体绘制十字光标
         /// </summary>
-        public void drawCross()
+        public void DrawCross()
         {
-            videoCap.CaptureBmp();
+            //捕获图像
+            videoCap.CaptureBMPpreview();
+            //处理图像
             imageX.Load_Bitmap(videoCap.PreviewImage[0],videoCap.PreviewImage[1]);
-            videoCap.DrawImage(
-                (int)imageX.ShapeCenterX, 
-                (int)imageX.ShapeCenterY,
-                center.X,center.Y);
+            //绘制十字
+            videoCap.NewdrawOnpreview((int)imageX.ShapeCenterX,(int)imageX.ShapeCenterY,
+                center.X,center.Y, (int)imageX.ShapeCenterX, (int)imageX.ShapeCenterY,
+                center.X, center.Y);
         }
 
         public void StopPreview()
@@ -110,20 +112,17 @@ namespace Preview
         public void Calibrate()
         {
             //首先获取图像
-            videoCap.CaptureBmp();
+            videoCap.CaptureBMPpreview();
             //获取偏移角度（计算旋转角度）
             imageX.Load_Bitmap(videoCap.PreviewImage[0],videoCap.PreviewImage[1]);
-
-            //TODO:控制电机运动
-            //debug info
-            motorController.AxisMove(new float[] { (float)imageX.Delta_Theta1, (float)imageX.Delta_Fai1, (float)imageX.Delta_Theta2, (float)imageX.Delta_Fai2 });
-            //motorController.AxisMove(new float[]{});
+            //控制器运动
+            motorController.AxisMove((float)imageX.Delta_Theta1, (float)imageX.Delta_Fai1, (float)imageX.Delta_Theta2, (float)imageX.Delta_Fai2 );
         }
 
         
 
     }
-
+    
 
 
     public enum PowerMode
